@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Routine Maker</title>
+  <link rel="stylesheet" href="RM.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>🗓️ Routine Maker</h1>
+    <p>Create and organize your daily routines to nurture your mental wellbeing.</p>
+  </header>
+
+  <main>
+    <section id="routineSection">
+      <form id="routineForm">
+        <input type="text" id="taskInput" placeholder="Add new task..." required />
+        <select id="timeOfDay">
+          <option value="Anytime">Anytime</option>
+          <option value="Morning">Morning</option>
+          <option value="Afternoon">Afternoon</option>
+          <option value="Evening">Evening</option>
+        </select>
+        <input type="number" id="duration" placeholder="Duration (mins)" min="1" />
+        <button type="submit">➕ Add Task</button>
+      </form>
+
+      <ul id="taskList"></ul>
+
+      <button id="clearBtn">Clear Routine</button>
+   <button onclick="exportRoutine()">📄 Export Routine</button>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Tree Phase • Root your day with intention 🌿</p>
+  </footer>
+
+  <script src="RM.js"></script>
+</body>
+</html>

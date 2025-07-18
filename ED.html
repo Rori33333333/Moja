@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eating Disorders Self-Check</title>
+  <link rel="stylesheet" href="ED.css"/>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <div class="edquiz-container">
+    <h1>Eating Disorder Self-Check</h1>
+    <form id="edQuiz"></form>
+    <button onclick="submitEDQuiz()">Submit</button>
+    <div id="edResult"></div>
+    <button onclick="exportEDResults()" id="edExportBtn" style="display:none;">Export Results</button>
+  </div>
+  <script src="ED.js"></script>
+</body>
+</html>

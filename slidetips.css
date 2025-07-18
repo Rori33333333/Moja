@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdfdfb;
+  color: #333;
+  overflow: hidden;
+}
+
+#swipe-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  background: #f6f1eb;
+  border-bottom: 1px solid #ddd;
+}
+
+.slide h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.slide p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+#slide-indicator {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #ffffffcc;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px #ddd;
+}

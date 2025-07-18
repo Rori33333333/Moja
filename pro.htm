@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mental Health Professionals</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f4f7f5;
+      color: #2d2d2d;
+    }
+    header {
+      background-color: #d8e7d0;
+      padding: 1em;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      color: #385f3b;
+    }
+    #searchBar {
+      width: 90%;
+      max-width: 600px;
+      margin: 1em auto;
+      display: block;
+      padding: 0.5em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .slideshow-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .card {
+      display: none;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 1em;
+      margin: 1em;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+    .card.active {
+      display: block;
+    }
+    .card h2 {
+      color: #2c4a2b;
+      margin-bottom: 0.5em;
+    }
+    .card p {
+      margin: 0.5em 0;
+    }
+    .nav-buttons {
+      margin: 1em;
+    }
+    .nav-buttons button {
+      background-color: #a4d4ae;
+      border: none;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .nav-buttons button:hover {
+      background-color: #88bd97;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mental Health Professionals</h1>
+  </header>
+  <input type="text" id="searchBar" placeholder="Search by profession or keyword..." />
+  <div class="slideshow-container" id="cardContainer"></div>
+  <div class="nav-buttons">
+    <button onclick="prevCard()">Previous</button>
+    <button onclick="nextCard()">Next</button>
+  </div>
+
+  <script>
+    const professionals = [
+      {
+        title: "Psychiatrist",
+        description: "A medical doctor specializing in mental illness, capable of prescribing medication.",
+        when: "If you need a diagnosis, medical treatment, or medication management."
+      },
+      {
+        title: "Psychologist",
+        description: "Focuses on mental processes and behavior, provides therapy and assessments.",
+        when: "When you need therapy or psychological testing."
+      },
+      {
+        title: "Clinical Social Worker",
+        description: "Offers therapy and support services with a focus on social systems.",
+        when: "If your mental health needs are related to social, environmental, or family issues."
+      },
+      // Add 35 total here (previously added content + 20 new ones)
+      {
+        title: "Trauma Counselor",
+        description: "Specializes in working with individuals affected by trauma.",
+        when: "If you’ve experienced a traumatic event."
+      },
+      {
+        title: "Grief Therapist",
+        description: "Supports clients through the grieving process.",
+        when: "If you're struggling with loss."
+      },
+      {
+        title: "Art Therapist",
+        description: "Uses creative expression as part of the therapeutic process.",
+        when: "If traditional therapy feels too difficult."
+      },
+      {
+        title: "Dance/Movement Therapist",
+        description: "Uses movement to help clients achieve emotional and physical integration.",
+        when: "If you respond well to physical expression."
+      },
+      {
+        title: "Music Therapist",
+        description: "Incorporates music in therapy sessions.",
+        when: "If music helps you process emotions."
+      },
+      {
+        title: "Pastoral Counselor",
+        description: "Combines spiritual guidance with psychotherapy.",
+        when: "If you're facing a spiritual or emotional crisis."
+      },
+      {
+        title: "Peer Support Specialist",
+        description: "Has lived experience with mental health conditions and supports others.",
+        when: "If you want empathetic support from someone who's been there."
+      },
+      {
+        title: "Mental Health Nurse",
+        description: "Provides psychiatric care in hospitals or clinics.",
+        when: "If you need consistent medical monitoring."
+      },
+      {
+        title: "Rehabilitation Counselor",
+        description: "Helps people cope with disabilities and improve independence.",
+        when: "If your mental health is affected by disability or trauma."
+      },
+      {
+        title: "Addiction Counselor",
+        description: "Specializes in substance use and addiction recovery.",
+        when: "If you're struggling with substance use."
+      },
+      {
+        title: "Family Therapist",
+        description: "Helps families improve communication and resolve conflicts.",
+        when: "If family dynamics impact your mental health."
+      },
+      {
+        title: "Child Psychologist",
+        description: "Specializes in child development and disorders.",
+        when: "If your child is struggling emotionally or behaviorally."
+      },
+      {
+        title: "Play Therapist",
+        description: "Uses play to help children express feelings and process trauma.",
+        when: "If your young child needs therapy."
+      },
+      {
+        title: "Behavioral Therapist",
+        description: "Focuses on changing negative behavior patterns.",
+        when: "If you want to change habits or reactions."
+      },
+      {
+        title: "Educational Psychologist",
+        description: "Supports learning and emotional challenges in school settings.",
+        when: "If academic stress is affecting your mental health."
+      },
+      {
+        title: "Crisis Counselor",
+        description: "Provides immediate support during mental health crises.",
+        when: "If you're experiencing an acute emotional crisis."
+      },
+      {
+        title: "Occupational Therapist (Mental Health)",
+        description: "Supports people in managing daily life activities and routines.",
+        when: "If you struggle with daily functioning due to mental health."
+      }
+    ];
+
+    let currentIndex = 0;
+    const container = document.getElementById("cardContainer");
+
+    function renderCards() {
+      container.innerHTML = "";
+      professionals.forEach((pro, index) => {
+        const card = document.createElement("div");
+        card.className = `card ${index === currentIndex ? "active" : ""}`;
+        card.innerHTML = `
+          <h2>${pro.title}</h2>
+          <p><strong>What They Do:</strong> ${pro.description}</p>
+          <p><strong>When to See Them:</strong> ${pro.when}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function nextCard() {
+      currentIndex = (currentIndex + 1) % professionals.length;
+      renderCards();
+    }
+
+    function prevCard() {
+      currentIndex = (currentIndex - 1 + professionals.length) % professionals.length;
+      renderCards();
+    }
+
+    document.getElementById("searchBar").addEventListener("input", function (e) {
+      const value = e.target.value.toLowerCase();
+      const filtered = professionals.filter(p =>
+        p.title.toLowerCase().includes(value) ||
+        p.description.toLowerCase().includes(value) ||
+        p.when.toLowerCase().includes(value)
+      );
+      if (filtered.length > 0) {
+        currentIndex = professionals.indexOf(filtered[0]);
+      } else {
+        currentIndex = 0;
+      }
+      renderCards();
+    });
+
+    renderCards();
+  </script>
+</body>
+</html>

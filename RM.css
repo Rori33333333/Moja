@@ -1,0 +1,203 @@
+/* Base and layout */
+body {
+  font-family: 'Georgia', serif;
+  background: #f4f2ed;
+  color: #2e2b1f;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background: linear-gradient(to bottom right, #8d947a, #c3bda1);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px solid #5e614c;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.9;
+}
+
+/* Main section */
+main {
+  flex-grow: 1;
+  max-width: 700px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  background: #faf9f5;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+}
+
+/* Routine form */
+#routineForm {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+#taskInput {
+  flex-grow: 2;
+  min-width: 180px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #c5bca4;
+  font-size: 1.1rem;
+  transition: border-color 0.3s;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #7b6f49;
+}
+
+#timeOfDay, #duration {
+  flex-grow: 1;
+  min-width: 130px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 2px solid #c5bca4;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+#timeOfDay:focus, #duration:focus {
+  outline: none;
+  border-color: #7b6f49;
+}
+
+button[type="submit"], #clearBtn, #exportBtn {
+  background: #7b6f49;
+  border: none;
+  color: #faf9f5;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+  user-select: none;
+  flex-grow: 0;
+  min-width: 140px;
+}
+
+button[type="submit"]:hover,
+#clearBtn:hover,
+#exportBtn:hover {
+  background: #5e5a3e;
+}
+
+#exportBtn {
+  margin-left: 10px;
+}
+
+/* Task list styling */
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+
+.draggable {
+  background: #fffdf9;
+  border-left: 6px solid #6e8765;
+  margin-bottom: 12px;
+  padding: 18px 24px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: grab;
+  box-shadow: 0 2px 6px rgba(110,135,101,0.15);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.draggable:hover {
+  background-color: #f0f3e8;
+  box-shadow: 0 4px 14px rgba(110,135,101,0.25);
+}
+
+.draggable.dragging {
+  opacity: 0.6;
+  box-shadow: 0 0 14px 3px #9dbf84;
+}
+
+.draggable.drag-over {
+  border-color: #a4c17e;
+  background-color: #e7f0d9;
+}
+
+.task-info {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  max-width: 80%;
+}
+
+.task-info strong {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: #3c462a;
+}
+
+.tag {
+  background: #a4b98e;
+  padding: 4px 14px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  color: #2e3b1f;
+  user-select: none;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #566639;
+  user-select: none;
+}
+
+/* Remove button */
+.remove-btn {
+  background: none;
+  border: none;
+  color: #b44f4f;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.3rem;
+  user-select: none;
+  padding: 4px 6px;
+  transition: color 0.3s;
+}
+
+.remove-btn:hover {
+  color: #7a2a2a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  #routineForm {
+    flex-direction: column;
+    gap: 12px;
+  }
+  button[type="submit"], #clearBtn, #exportBtn {
+    width: 100%;
+    min-width: unset;
+  }
+  .task-info {
+    max-width: 100%;
+  }
+}

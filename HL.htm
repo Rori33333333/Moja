@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Helplines - MojaMind</title>
+  <link rel="stylesheet" href="HL.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>🆘 Emergency & Helplines</h1>
+    <p>If you or someone you know needs immediate support, reach out to these trusted resources.</p>
+  </header>
+
+  <main>
+
+    <div id="searchContainer">
+  <label for="searchInput">Search helplines:</label>
+  <input type="search" id="searchInput" placeholder="Type to filter helplines..." aria-label="Search helplines" />
+</div>
+    <section id="helplineList">
+      <h2>Available Helplines</h2>
+      <p>Click on a helpline to call or visit their website for more information.</p>
+
+    <section class="helpline-category">
+      <h2>Mental Health Crisis</h2>
+      <ul>
+        <li>
+          <strong>South African Suicide Crisis Line</strong><br />
+          <a href="tel:0800111111" class="call-btn">Call 0800 111 111</a><br />
+          Available 24/7 for suicide prevention and emotional support.
+        </li>
+        <li>
+          <strong>LifeLine South Africa</strong><br />
+          <a href="tel:0861324357" class="call-btn">Call 0861 324 357</a><br />
+          Confidential emotional support for anyone in distress.
+        </li>
+        <li>
+          <strong>SADAG (South African Depression and Anxiety Group)</strong><br />
+          <a href="tel:0800121314" class="call-btn">Call 0800 12 13 14</a><br />
+          Support for depression, anxiety, and mental health concerns.
+        </li>
+      </ul>
+    </section>
+
+    <section class="helpline-category">
+      <h2>Domestic Violence & Abuse</h2>
+      <ul>
+        <li>
+          <strong>Domestic Violence Helpline</strong><br />
+          <a href="tel:0800150150" class="call-btn">Call 0800 150 150</a><br />
+          24/7 support for survivors of domestic abuse.
+        </li>
+        <li>
+          <strong>SAPS Crime Stop</strong><br />
+          <a href="tel:0860010111" class="call-btn">Call 08600 10111</a><br />
+          Report crime anonymously.
+        </li>
+      </ul>
+    </section>
+
+    <section class="helpline-category">
+      <h2>Substance Abuse Support</h2>
+      <ul>
+        <li>
+          <strong>South African National Council on Alcoholism and Drug Dependence (SANCA)</strong><br />
+          <a href="tel:0861234399" class="call-btn">Call 0861 234 399</a><br />
+          Help for addiction and substance abuse.
+        </li>
+      </ul>
+    </section>
+
+    <section class="helpline-category">
+      <h2>International Helplines</h2>
+      <ul>
+        <li>
+          <strong>International Suicide Prevention Hotline (USA)</strong><br />
+          <a href="tel:988" class="call-btn">Call 988</a><br />
+          Nationwide 24/7 crisis lifeline.
+        </li>
+        <li>
+          <strong>International Disaster Emergency Service</strong><br />
+          <a href="https://www.ifrc.org" target="_blank" rel="noopener noreferrer" class="web-link">Visit IFRC Website</a>
+        </li>
+      </ul>
+    </section>
+
+    <section id="crisis-guide">
+      <h2>What to do in a crisis</h2>
+      <p>If you are feeling overwhelmed or in immediate danger, try to:</p>
+      <ol>
+        <li>Find a safe place away from harm.</li>
+        <li>Reach out to a trusted person or one of the helplines above.</li>
+        <li>Take slow, deep breaths to help calm yourself.</li>
+        <li>If you feel you are in immediate danger, call emergency services.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MojaMind | Supporting your mental wellbeing</p>
+
+      <script src="HL.js"></script>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Documents/GitHub"
+		},
+		{
+			"path": "../../.vscode"
+		},
+		{
+			"path": "../../css"
+		},
+		{
+			"path": "../../dataconnect"
+		},
+		{
+			"path": "../../firebase use --add"
+		},
+		{
+			"path": "../../js"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": ".github"
+	}
+}

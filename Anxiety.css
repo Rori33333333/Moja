@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #e3e3cc, #e3e3cc);
+  margin: 0;
+  padding: 20px;
+  color: #000000;
+}
+
+.anxiety-container {
+  max-width: 750px;
+  margin: auto;
+  background-color: rgb(61, 121, 61);
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 12px rgba(0, 77, 64, 0.15);
+  border-left: 6px rgb(1, 15, 1);
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  margin-bottom: 30px;
+}
+
+.question {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgb(45, 116, 45);
+}
+
+.options label {
+  margin-right: 20px;
+}
+
+button {
+  background-color: darkgreen;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#anxietyResult {
+  margin-top: 25px;
+  font-weight: bold;
+  background: darkgreen;
+  padding: 20px;
+  border-radius: 10px;
+}

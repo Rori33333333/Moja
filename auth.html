@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MojaMind Login</title>
+</head>
+<body>
+  <h2>MojaMind Login / Signup</h2>
+
+  <form id="authForm">
+    <input type="email" id="email" placeholder="Email" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
+    <button type="submit" id="loginBtn">Login</button>
+    <button type="button" id="signupBtn">Sign Up</button>
+  </form>
+
+  <button id="logoutBtn" style="display: none;">Logout</button>
+  <p id="authStatus">Loading Firebase...</p>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script>
+    // Replace this with your real config from Firebase Console
+
+ const firebaseConfig = {
+    apiKey: "AIzaSyA2sRaadsBblfOL7HvtR69gJ6AfWQCGv7E",
+    authDomain: "mojamind-ffec3.firebaseapp.com",
+    projectId: "mojamind-ffec3",
+    storageBucket: "mojamind-ffec3.firebasestorage.app",
+    messagingSenderId: "71539429309",
+    appId: "1:71539429309:web:2bc6653446c4244a0c4cd4",
+    measurementId: "G-NX1EEJEDFH"
+  };
+
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+  </script>
+
+  <!-- Auth Logic -->
+  <script>
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const authStatus = document.getElementById('authStatus');
+
+    // Sign up
+    signupBtn.addEventListener('click', () => {
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      auth.createUserWithEmailAndPassword(email, password)
+        .then(user => {
+          authStatus.textContent = `Signed up as ${user.user.email}`;
+        })
+        .catch(error => {
+          authStatus.textContent = `Signup error: ${error.message}`;
+        });
+    });
+
+    // Login
+    loginBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      auth.signInWithEmailAndPassword(email, password)
+        .then(user => {
+          authStatus.textContent = `Logged in as ${user.user.email}`;
+        })
+        .catch(error => {
+          authStatus.textContent = `Login error: ${error.message}`;
+        });
+    });
+
+    // Logout
+    logoutBtn.addEventListener('click', () => {
+      auth.signOut().then(() => {
+        authStatus.textContent = 'Logged out.';
+      });
+    });
+
+    // Listen for auth state changes
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        authStatus.textContent = `Logged in as ${user.email}`;
+        logoutBtn.style.display = 'block';
+      } else {
+        authStatus.textContent = 'Not logged in.';
+        logoutBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

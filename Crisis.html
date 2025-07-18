@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crisis Self-Check</title>
+  <link rel="stylesheet" href="Crisis.css"/>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <div class="crisis-container">
+    <h1>Self-Harm & Crisis Check</h1>
+    <form id="crisisQuiz"></form>
+    <button onclick="submitCrisisQuiz()">Submit</button>
+    <div id="crisisResult"></div>
+    <button onclick="exportCrisisResults()" id="crisisExportBtn" style="display:none;">Export Results</button>
+  </div>
+  <script src="Crisis.js"></script>
+</body>
+</html>

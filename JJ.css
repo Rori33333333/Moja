@@ -1,0 +1,201 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #f4f2ed;
+  color: #2e2b1f;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(to bottom right, #8d947a, #c3bda1);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 4px solid #5e614c;
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 2.5rem;
+}
+
+main {
+  max-width: 700px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+  background: #faf9f5;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.07);
+}
+
+#promptBox {
+  background: #dbe4ca;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+#newPromptBtn {
+  background: #7b6f49;
+  border: none;
+  color: #faf9f5;
+  padding: 8px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+#newPromptBtn:hover {
+  background: #5e5a3e;
+}
+
+#journalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+#moodSelect {
+  max-width: 200px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #c5bca4;
+  transition: border-color 0.3s;
+}
+
+#moodSelect:focus {
+  outline: none;
+  border-color: #7b6f49;
+}
+
+#journalEntry {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 2px solid #c5bca4;
+  resize: vertical;
+  min-height: 140px;
+  transition: border-color 0.3s;
+}
+
+#journalEntry:focus {
+  outline: none;
+  border-color: #7b6f49;
+}
+
+#journalForm button[type="submit"] {
+  align-self: flex-start;
+  background: #7b6f49;
+  border: none;
+  color: #faf9f5;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+#journalForm button[type="submit"]:hover {
+  background: #5e5a3e;
+}
+
+#entryList {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.entry-item {
+  background: #fffdf9;
+  border-left: 6px solid #6e8765;
+  margin-bottom: 12px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.entry-item h3 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: #3c462a;
+}
+
+.entry-item p {
+  margin: 6px 0 0;
+  white-space: pre-wrap;
+}
+
+.entry-meta {
+  font-size: 0.85rem;
+  color: #566639;
+  user-select: none;
+  margin-bottom: 6px;
+}
+
+.entry-actions {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.entry-actions button {
+  background: none;
+  border: none;
+  color: #7b6f49;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.2rem;
+  user-select: none;
+  transition: color 0.3s;
+}
+
+.entry-actions button:hover {
+  color: #5e5a3e;
+}
+
+#clearAllBtn {
+  background: #b44f4f;
+  border: none;
+  color: #faf9f5;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.1rem;
+  user-select: none;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+#clearAllBtn:hover {
+  background: #7a2a2a;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  main {
+    margin: 20px 10px 40px;
+  }
+  #promptBox {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  #newPromptBtn {
+    align-self: flex-start;
+  }
+}

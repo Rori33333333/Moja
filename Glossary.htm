@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Mental health, Anxiety, Depression, Bipolar, DBT, CBT, Mental health coping skills, Schizophrenia, Borderline personality disorder" />
+  <meta name="author" content="Gomolemo Nthite" />
+  <title>MojaMind Glossary</title>
+  <link rel="stylesheet" href="home.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+
+    
+
+    <h1> Glossary</h1>
+
+
+     <!-- Glossary sample for bookmarks & search -->
+  <section id="glossarySection">
+    <h2> Search for glossary terms</h2>
+    <input type="search" id="searchBar" placeholder="Search glossary terms..." />
+    <ul id="glossaryList">
+
+ <li class="glossary-item">Mental Health  Your emotional, psychological, and social well-being; it affects how you think, feel, and act.
+</li>
+      <li class="glossary-item">1.Mental Illness – A condition that affects a person’s thinking, feeling, behavior, or mood. It may be occasional or long-lasting.
+</li>
+      <li class="glossary-item"> 2.Bipolar Disorder – A mood disorder with episodes of extreme highs (mania) and lows (depression).
+</li>
+      <li class="glossary-item">3.Psychosis – A mental state where a person loses touch with reality, often involving hallucinations or delusions.
+</li>
+ <li class="glossary-item">4.Depression – A mood disorder that causes persistent sadness, hopelessness, and a loss of interest in things you once enjoyed.
+</li>
+      <li class="glossary-item">5.Anxiety – A feeling of fear or worry that’s strong enough to affect your daily life. Can be short-term or long-term.
+</li>
+      <li class="glossary-item">6.Panic Attack – A sudden episode of intense fear or discomfort that can include heart palpitations, sweating, shaking, or shortness of breath.
+</li>
+      <li class="glossary-item">7.Stress – Your body’s reaction to a challenge or demand. It can be helpful in small doses but harmful when long-term.
+</li>
+      <li class="glossary-item">8.Trauma – A deeply distressing or disturbing experience that can have long-term effects on mental health.
+</li>
+      <li class="glossary-item">9.PTSD (Post-Traumatic Stress Disorder) – A condition triggered by a terrifying event, causing flashbacks, nightmares, or severe anxiety.
+</li>
+      <li class="glossary-item">10.OCD (Obsessive-Compulsive Disorder) – A disorder where a person has unwanted thoughts (obsessions) and repetitive behaviors (compulsions).
+</li>
+      <li class="glossary-item">11.ADHD (Attention-Deficit/Hyperactivity Disorder) – A condition involving difficulty paying attention, staying still, or controlling impulses.
+</li>
+      <li class="glossary-item">12.Psychosis – A mental state where a person loses touch with reality, often involving hallucinations or delusions.
+</li>
+      
+      <li class="glossary-item">13.Delusion – A false belief that a person holds strongly, even if there is evidence it's not true.
+</li>
+      <li class="glossary-item">14.Hallucination – Seeing, hearing, or feeling things that aren’t there.
+</Disorderli>
+      <li class="glossary-item">15. Self-Esteem – How much you value, respect, and feel confident about yourself.</li>
+      <li class="glossary-item">16. Coping Skills – Tools and strategies used to manage stress, emotions, or difficult situations.
+</li>
+     
+      <li class="glossary-item">17. Burnout – A state of emotional, physical, and mental exhaustion caused by excessive stress, often from work or school.
+</li>
+      <li class="glossary-item">18. Boundaries – Personal limits that protect your emotional space and help you stay mentally healthy.
+</li>
+      <li class="glossary-item">19. Therapy – A safe space where you talk to a professional to help you manage mental or emotional issues.
+</li>
+      <li class="glossary-item">20. Counselor – A mental health professional who helps you work through personal or emotional problems.
+</li>
+      <li class="glossary-item">21. Psychologist – A trained mental health expert who studies behavior and provides therapy but doesn’t prescribe medication.
+</li>
+      <li class="glossary-item">22. Psychiatrist – A medical doctor who specializes in mental health and can prescribe medication.
+</li>
+      <li class="glossary-item">23. Mood Disorder – A category of mental health problems that affect a person’s emotional state, such as depression or bipolar disorder.
+</li>
+      <li class="glossary-item">24. Resilience – Your ability to bounce back from challenges, stress, or difficult emotions.
+</li>
+      <li class="glossary-item"> Emotional Regulation – Managing your emotions in a healthy, balanced way.</li>
+      <li class="glossary-item">26. Mindfulness – Being present and fully aware of what you’re doing and how you’re feeling in the moment without judgment.
+</li>
+      <li class="glossary-item">27. Meditation – A practice that calms the mind and body through breathing, focus, or silence.
+</li>
+      <li class="glossary-item">28. Affirmations – Positive statements you repeat to yourself to build self-belief and confidence.
+</li>
+        <li class="glossary-item">29. Self-Care – Activities and habits you do to care for your body, mind, and emotions.
+</li>
+      <li class="glossary-item">30. Neurotransmitters – Chemicals in the brain that help send messages between nerve cells; they affect mood and behavior.
+</li>
+      <li class="glossary-item">31. Dopamine – A feel-good neurotransmitter linked to motivation, pleasure, and reward.
+</li>
+      <li class="glossary-item">32. Serotonin – A brain chemical that helps regulate mood, sleep, and appetite.
+</li>
+      
+        <li class="glossary-item">33. Cortisol – A hormone released when you're stressed; known as the “stress hormone.”
+</li>
+      <li class="glossary-item">34. Endorphins – Chemicals your body produces that help relieve pain and boost happiness.</li>
+      <li class="glossary-item">35. Fight, Flight, Freeze – A natural stress response where your body reacts to danger by fighting, running away, or freezing in place.
+</li>
+      <li class="glossary-item">36. Polyvagal Theory – A theory that explains how the nervous system reacts to stress, safety, and social connection.
+</li>
+       <li class="glossary-item">36. Polyvagal Theory – A theory that explains how the nervous system reacts to stress, safety, and social connection.
+</li>
+        <li class="glossary-item">37. Somatic Symptoms – Physical symptoms that are caused or worsened by emotional distress (e.g., headaches from stress).
+</li>
+         <li class="glossary-item">38. Body Dysmorphia – A mental health condition where a person becomes obsessed with perceived flaws in their appearance.
+</li>
+          <li class="glossary-item">39. Eating Disorder – A range of conditions involving unhealthy relationships with food and body image (e.g., anorexia, bulimia).
+</li>
+            <li class="glossary-item">40. Self-Harm – Deliberately hurting yourself as a way to cope with emotional pain. It’s a sign of needing help, not attention.
+</li>       
+            <li class="glossary-item">41. Suicidal Ideation – Thoughts about ending one’s life. These thoughts are serious and need immediate support.
+</li>
+            <li class="glossary-item">42. Crisis – A time of intense difficulty or danger when a person may feel overwhelmed and unable to cope.
+</li>
+            <li class="glossary-item">43. Support System – The people in your life (friends, family, professionals) who offer emotional or practical support.
+</li>
+          <li class="glossary-item">44. Stigma – Negative beliefs or attitudes about mental illness that can make people feel ashamed or afraid to seek help.
+</li>
+          <li class="glossary-item">45. Diagnosis – When a health professional identifies a mental health condition based on symptoms and behavior.
+</li>
+          <li class="glossary-item">46. Recovery – The process of improving mental health and finding ways to live a fulfilling life despite challenges.
+</li>
+           <li class="glossary-item">47. Grounding – Techniques that help you return to the present moment during anxiety, panic, or dissociation.
+</li>
+           <li class="glossary-item">48. Dissociation – Feeling disconnected from your body, thoughts, or surroundings, often as a response to stress or trauma.
+</li>                             
+           <li class="glossary-item">49. Trigger – Something that brings up strong emotions or memories, especially of trauma or stress.
+</li>
+            <li class="glossary-item">50. Neurodivergent – A term for people whose brains work differently (e.g., ADHD, autism) and who experience the world in unique ways.
+</li>   
+                               
+      <!-- Add more glossary terms as needed -->
+    </ul>
+  </section>
+
+
+  <script src="Gloss.js"></script>
+
+
+</body>
+</html>

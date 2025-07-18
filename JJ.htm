@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Journal with Prompts</title>
+  <link rel="stylesheet" href="JJ.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>🌿 Reflect & Grow Journal</h1>
+    <p>Write your thoughts, feelings, and reflections. Use the daily prompt or select your own.</p>
+  </header>
+
+  <main>
+    <section id="journalSection">
+      <div id="promptBox">
+        <strong>Prompt:</strong> <span id="promptText"></span>
+        <button id="newPromptBtn" aria-label="New Prompt">↻ New Prompt</button>
+      </div>
+
+      <form id="journalForm">
+        <label for="moodSelect">Mood:</label>
+        <select id="moodSelect" name="mood">
+          <option value="">-- Select Mood --</option>
+          <option value="Happy">😊 Happy</option>
+          <option value="Calm">😌 Calm</option>
+          <option value="Sad">😢 Sad</option>
+          <option value="Anxious">😰 Anxious</option>
+          <option value="Angry">😠 Angry</option>
+          <option value="Grateful">🙏 Grateful</option>
+        </select>
+
+        <textarea id="journalEntry" rows="8" placeholder="Start writing here..."></textarea>
+
+        <button type="submit">Save Entry</button>
+      </form>
+
+      <h2>Previous Entries</h2>
+      <ul id="entryList"></ul>
+
+      <button id="clearAllBtn">Clear All Entries</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tree Phase • Nurture your inner growth 🌳</p>
+  </footer>
+
+  <script src="JJ.js"></script>
+</body>
+</html>

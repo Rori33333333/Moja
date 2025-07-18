@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood & Symptom Tracker</title>
+  <link rel="stylesheet" href="MS.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>️ Mood & Symptom Tracker</h1>
+
+    <label for="moodSelect">How do you feel today?</label>
+    <select id="moodSelect">
+      <option value=""> Happy</option>
+      <option value=""> Neutral</option>
+      <option value=""> Low</option>
+      <option value=""> Anxious</option>
+      <option value=""> Frustrated</option>
+      <option value=""> Overwhelmed</option>
+    </select>
+
+    <label>Select any emotions you’re feeling:</label>
+    <div class="tags">
+      <label><input type="checkbox" value="tired" /> Tired</label>
+      <label><input type="checkbox" value="angry" /> Angry</label>
+      <label><input type="checkbox" value="anxious" /> Anxious</label>
+      <label><input type="checkbox" value="numb" /> Numb</label>
+      <label><input type="checkbox" value="calm" /> Calm</label>
+      <label><input type="checkbox" value="motivated" /> Motivated</label>
+      <label><input type="checkbox" value="lonely" /> Lonely</label>
+    </div>
+
+    <label for="moodNote">Any notes or thoughts?</label>
+    <textarea id="moodNote" rows="5" placeholder="Write your thoughts..."></textarea>
+
+    <button onclick="saveMood()">Save Entry</button>
+    <button onclick="exportMoodLog()">Export All Entries</button>
+
+    <h2> Mood History</h2>
+    <ul id="moodHistory"></ul>
+  </div>
+
+  <script src="MS.js"></script>
+</body>
+</html>

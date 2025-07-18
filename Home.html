@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="Mental health, Anxiety, Depression, Bipolar, DBT, CBT, Mental health coping skills, Schizophrenia, Borderline personality disorder" />
+  <meta name="author" content="Gomolemo Nthite" />
+  <title>MojaMind</title>
+  <link rel="stylesheet" href="home.css" />
+
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="firebase-init.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Scroll Indicator -->
+  <div id="scrollIndicator"></div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">MojaMind</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="current-page">Home</a></li>
+    
+    <li><a href="Glossary.htm">Glossary</a></li>
+      <li><a href="Main.htm">Health Hub</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="pledge.html">Pledge</a></li>
+      <li><button id="viewBookmarksBtn" class="btn1">View Bookmarks</button></li>
+    </ul>
+  </nav>
+
+  <h1>MojaMind</h1>
+  <h2>Mental Health Is For Everyone</h2>
+
+  <button id="beginSeedBtn" class="btn1">Begin Here</button>
+
+
+  <p id="welcomemessage">
+    Welcome to the land of the thriving.<br />
+    Today you start your journey as a seedling,<br />
+    One day a big tree will sprout.<br />
+    Your roots will connect you with your great origin,<br />
+    Your trunk shooting straight up to the stars,<br />
+    Your leaves will be bright and carry your Joy.
+  </p>
+
+  <p>
+    MojaMind is a mental health literacy and education website. In order to take care of your mental health,
+    knowing what to do is key. If you do not know where to begin, do not worry, you are on the right path.
+    You are not alone. MojaMind is meant to guide you through your education and awareness journey — you are in good hands.
+  </p>
+
+  
+  <section class="phases">
+    <div class="phase" id="seed">
+      <img src="Seed.png" alt="Seed phase" width="200" height="170" />
+      <a href="Seed.html" class="btn1">Seed phase [Begin here!]</a>
+    </div>
+    <div class="phase" id="sprout">
+      <img src="Sprout.png" alt="Sprout phase" width="200" height="170" />
+      <a href="Sprout phase .html" class="btn1">Sprout phase</a>
+    </div>
+    <div class="phase" id="tree">
+      <img src="TreeFull.png" alt="Tree phase" width="200" height="200" />
+      <a href="Tree.html" class="btn1">Tree phase</a>
+    </div>
+  </section>
+
+ 
+
+  <!-- Welcome Popup -->
+  <div id="welcomePopup" class="popup hidden">
+    <div class="popup-content">
+      <h2>Welcome to MojaMind</h2>
+      <p>Healing starts here. If you're ready, sign the pledge.</p>
+      <a href="pledge.html" class="btn1">Sign the Pledge</a>
+      <button id="closePopup" class="btn1" style="margin-top: 10px;">Close</button>
+    </div>
+  </div>
+
+
+  <!-- Footer Section -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-links">
+      <a href="about.html">About Us</a>
+      <a href="Glossary.htm">Glossary</a>
+      <a href="pledge.html">Pledge</a>
+      <a href="faq.html">FAQ</a>
+      <a href="#seed">Phases</a>
+    </div>
+    <div class="footer-contact">
+      <p>📞 Phone: +27 123 456 789</p>
+      <p>📧 Email: info@mojamind.org</p>
+    </div>
+    <div class="footer-copy">
+      <p>© MojaMind 2025. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="home.js"></script>
+
+  
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Food Diary + Mood</title>
+  <link rel="stylesheet" href="FD.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <div class="container">
+    <h1>️ Food Diary + Mood Tracker</h1>
+
+    <form id="foodForm">
+      <label for="mealType">Meal Type:</label>
+      <select id="mealType" required>
+        <option value="">Select...</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Snack">Snack</option>
+        <option value="Dinner">Dinner</option>
+      </select>
+
+      <label for="foodEaten">What did you eat?</label>
+      <textarea id="foodEaten" rows="3" placeholder="Describe your meal..." required></textarea>
+
+      <label for="moodAfterMeal">Mood After Eating:</label>
+      <select id="moodAfterMeal" required>
+        <option value="">Select...</option>
+        <option value=""> Happy</option>
+        <option value=""> Neutral</option>
+        <option value=""> Low</option>
+        <option value=""> Anxious</option>
+        <option value=""> Frustrated</option>
+        <option value=""> Overwhelmed</option>
+      </select>
+
+      <label for="foodNotes">Any notes?</label>
+      <textarea id="foodNotes" rows="3" placeholder="How did it make you feel?" ></textarea>
+
+      <button type="submit">Save Meal</button>
+    </form>
+
+    <h2> Food Diary History</h2>
+    <ul id="foodHistory"></ul>
+
+   
+  </div>
+
+  <script src="Fd.js"></script>
+</body>
+</html> 

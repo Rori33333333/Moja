@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Habits Self-Check</title>
+  <link rel="stylesheet" href="DT.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <div class="diet-container">
+    <h1>Diet Habits Self-Check</h1>
+    <form id="dietQuiz"></form>
+    <button onclick="submitDietQuiz()">Submit</button>
+    <div id="dietResult"></div>
+    <button onclick="exportDietResults()" id="dietExportBtn" style="display:none;">Export Results</button>
+  </div>
+  <script src="DT.js"></script>
+</body>
+</html>

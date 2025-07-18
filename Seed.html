@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MojaMind – Seed Phase</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="firebase-init.js"></script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Welcome to MojaMind 🌱</h1>
+    <p class="tagline">Planting the seeds of mental wellness</p>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pages/professionals.html">Mental Health Pros</a></li>
+      <li><a href="pages/therapy.html">Types of Therapy</a></li>
+      <li><a href="pages/conditions.html">Mental Health Conditions</a></li>
+      <li><a href="pages/glossary.html">Glossary</a></li>
+      <li><a href="pages/faq.html">FAQs</a></li>
+      <li><a href="bookmarks/bookmark.html">🔖 Bookmarks</a></li>
+    </ul>
+  </nav>
+
+  <section class="search">
+    <input type="text" id="searchInput" placeholder="Search MojaMind..." />
+  </section>
+
+  <main>
+    <section class="heal-section">
+      <h2>H.E.A.L</h2>
+      <div class="heal-words">
+        <div><strong>H</strong>ope</div>
+        <div><strong>E</strong>ducation</div>
+        <div><strong>A</strong>wareness</div>
+        <div><strong>L</strong>ight</div>
+      </div>
+      <p class="heal-message">Every journey starts with planting a seed — here's where we begin nurturing your mind.</p>
+    </section>
+
+    <section class="toc">
+      <h2>Explore the Seed Phase</h2>
+      <div class="cards">
+         <a href="CB.html" class="card" data-page="Common Conditions">Mental health conditions</a>
+        <a href="pages/professionals.html" class="card" data-page="Mental Health Professionals">Mental Health Professionals</a>
+        <a href="pages/therapy.html" class="card" data-page="Types of Therapy">Types of Therapy</a>
+        <a href="pages/glossary.html" class="card" data-page="Glossary of Terms">Glossary of Terms</a>
+        <a href="pages/faq.html" class="card" data-page="FAQs">FAQs</a>
+      </div>
+      <button id="bookmarkBtn">📌 Bookmark This Page</button>
+    </section>
+
+    <section id="wordOfDay" class="word-day">
+      <h2>🌼 Word of the Day</h2>
+      <p id="word"></p>
+      <p id="definition"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 MojaMind | Growing together 🌻</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

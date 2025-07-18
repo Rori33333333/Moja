@@ -1,0 +1,94 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9fdf8;
+  color: #334;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #e7f7e2;
+  padding: 40px 20px;
+  text-align: center;
+  border-bottom: 2px solid #cce7bb;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #4d7c4d;
+  margin-bottom: 10px;
+}
+h2 {
+
+  text-align: left;
+  
+}
+
+.subtitle {
+  color: #5a755e;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.search-bookmark {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 20px;
+  border: 1px solid #cde5c3;
+  font-size: 1rem;
+}
+
+#bookmarkBtn {
+  background: #cde5c3;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+main {
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  background: #eafae6;
+  border: 2px solid #cde5c3;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #2e5130;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.card:hover {
+  background: #dff7d2;
+  transform: translateY(-3px);
+}
+
+footer {
+  background: #f3f9f1;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #6a7c68;
+}

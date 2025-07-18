@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MojaMind Toolbox Maker</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f3f7f1;
+      color: #333;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      color: #4d774e;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      background: #6ea07f;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #toolbox-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #toolbox-controls select, #toolbox-controls button {
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .tool {
+      background: #fff;
+      border-left: 5px solid #6ea07f;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .tool small {
+      display: block;
+      margin-top: 8px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌿 MojaMind Toolbox Maker</h1>
+
+  <form id="toolForm">
+    <input type="text" id="title" placeholder="Tool Title" required>
+    <textarea id="description" placeholder="Tool Description" required></textarea>
+    <select id="category">
+      <option value="emotional">Emotional</option>
+      <option value="physical">Physical</option>
+      <option value="sensory">Sensory</option>
+      <option value="social">Social</option>
+    </select>
+    <input type="text" id="tags" placeholder="Tags (comma-separated)">
+    <input type="number" id="rating" placeholder="Rating (1-5)" min="1" max="5">
+    <button type="submit">Add Tool</button>
+  </form>
+
+  <div id="toolbox-controls">
+    <select id="sortTools">
+      <option value="newest">Sort by: Newest</option>
+      <option value="highest">Sort by: Highest Rated</option>
+      <option value="category">Sort by: Category</option>
+    </select>
+
+    <select id="filterCategory">
+      <option value="all">Filter: All Categories</option>
+      <option value="emotional">Emotional</option>
+      <option value="physical">Physical</option>
+      <option value="sensory">Sensory</option>
+      <option value="social">Social</option>
+    </select>
+
+    <button id="exportTools">📄 Export Toolbox</button>
+  </div>
+
+  <div id="toolList"></div>
+
+  <script>
+    const form = document.getElementById('toolForm');
+    const toolList = document.getElementById('toolList');
+    const sortSelect = document.getElementById('sortTools');
+    const filterSelect = document.getElementById('filterCategory');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const tool = {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        category: document.getElementById('category').value,
+        tags: document.getElementById('tags').value.split(',').map(t => t.trim()),
+        rating: parseInt(document.getElementById('rating').value) || 1,
+        createdAt: Date.now()
+      };
+
+      const tools = JSON.parse(localStorage.getItem('toolbox') || '[]');
+      tools.push(tool);
+      localStorage.setItem('toolbox', JSON.stringify(tools));
+
+      form.reset();
+      renderToolbox();
+    });
+
+    sortSelect.addEventListener('change', renderToolbox);
+    filterSelect.addEventListener('change', renderToolbox);
+
+    function renderToolbox() {
+      const tools = JSON.parse(localStorage.getItem('toolbox') || '[]');
+      const sortBy = sortSelect.value;
+      const filter = filterSelect.value;
+      let filtered = [...tools];
+
+      if (filter !== 'all') {
+        filtered = filtered.filter(tool => tool.category === filter);
+      }
+
+      if (sortBy === 'highest') {
+        filtered.sort((a, b) => b.rating - a.rating);
+      } else if (sortBy === 'category') {
+        filtered.sort((a, b) => a.category.localeCompare(b.category));
+      } else {
+        filtered.sort((a, b) => b.createdAt - a.createdAt);
+      }
+
+      displayTools(filtered);
+    }
+
+    function displayTools(tools) {
+      toolList.innerHTML = '';
+      tools.forEach(tool => {
+        const div = document.createElement('div');
+        div.className = 'tool';
+        div.innerHTML = `<strong>${tool.title}</strong>
+          <p>${tool.description}</p>
+          <small>Category: ${tool.category} | Rating: ${tool.rating}/5</small>
+          <small>Tags: ${tool.tags.join(', ')}</small>`;
+        toolList.appendChild(div);
+      });
+    }
+
+    document.getElementById('exportTools').addEventListener('click', () => {
+      const tools = JSON.parse(localStorage.getItem('toolbox') || '[]');
+      const exportText = tools.map(tool => {
+        return `📌 ${tool.title}\nCategory: ${tool.category}\nTags: ${tool.tags.join(', ')}\nRating: ${tool.rating}/5\n${tool.description}\n\n`;
+      }).join('');
+
+      const blob = new Blob([exportText], { type: 'text/plain' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'moja_toolbox.txt';
+      a.click();
+    });
+
+    renderToolbox();
+  </script>
+</body>
+</html>

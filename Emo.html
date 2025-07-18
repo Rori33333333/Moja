@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emotional Regulation Quiz</title>
+  <link rel="stylesheet" href="Emo.css"/>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+
+<body>
+  <div class="emoreg-container">
+    <h1>Emotional Regulation Self-Check</h1>
+    <form id="emoregQuiz"></form>
+    <button onclick="submitEmoregQuiz()">Submit</button>
+    <div id="emoregResult"></div>
+    <button onclick="exportEmoregResults()" id="emoregExportBtn" style="display:none;">Export Results</button>
+  </div>
+  <script src="Emo.js"></script>
+</body>
+</html>

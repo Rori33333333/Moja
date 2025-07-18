@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Therapy Types</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f3f7f1;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+      color: #2f613f;
+    }
+    #searchInput {
+      display: block;
+      margin: 1rem auto;
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: #ffffff;
+      border-left: 4px solid #7cb97e;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #2f613f;
+    }
+    .card p {
+      margin: 0.5rem 0;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Types of Therapy</h1>
+  <input type="text" id="searchInput" placeholder="Search therapy types..." />
+  <div class="grid" id="cardGrid">
+    <div class="card">
+      <h2>Cognitive Behavioral Therapy (CBT)</h2>
+      <p><strong>Purpose:</strong> Restructure negative thought patterns and behaviors.</p>
+      <p><strong>Common Uses:</strong> Anxiety, depression, OCD, phobias.</p>
+    </div>
+    <div class="card">
+      <h2>Dialectical Behavior Therapy (DBT)</h2>
+      <p><strong>Purpose:</strong> Combines CBT with mindfulness to manage intense emotions.</p>
+      <p><strong>Common Uses:</strong> Borderline personality disorder, self-harm, emotional regulation.</p>
+    </div>
+    <div class="card">
+      <h2>Psychodynamic Therapy</h2>
+      <p><strong>Purpose:</strong> Explore unconscious patterns rooted in past experiences.</p>
+      <p><strong>Common Uses:</strong> Trauma, relationship issues, long-term emotional problems.</p>
+    </div>
+    <div class="card">
+      <h2>Humanistic Therapy</h2>
+      <p><strong>Purpose:</strong> Focus on self-growth and finding meaning.</p>
+      <p><strong>Common Uses:</strong> Low self-esteem, self-exploration, grief.</p>
+    </div>
+    <div class="card">
+      <h2>Eye Movement Desensitization and Reprocessing (EMDR)</h2>
+      <p><strong>Purpose:</strong> Reprocess trauma through guided eye movements.</p>
+      <p><strong>Common Uses:</strong> PTSD, flashbacks, trauma.</p>
+    </div>
+    <!-- More therapy types can be added here -->
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const cardGrid = document.getElementById("cardGrid");
+    const cards = cardGrid.querySelectorAll(".card");
+
+    searchInput.addEventListener("input", () => {
+      const term = searchInput.value.toLowerCase();
+      cards.forEach(card => {
+        const title = card.querySelector("h2").textContent.toLowerCase();
+        const text = card.textContent.toLowerCase();
+        const match = title.includes(term) || text.includes(term);
+        card.style.display = match ? "block" : "none";
+      });
+    });
+  </script>
+</body>
+</html>

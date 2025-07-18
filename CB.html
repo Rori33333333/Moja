@@ -1,0 +1,252 @@
+<!-- Modern, garden-themed card-based slides for Seed Phase -->
+
+<!-- Table of Contents + Search -->
+<div class="toc-wrapper">
+  <input type="text" id="searchInput" placeholder="Search conditions..." />
+  <ul id="tocList"></ul>
+</div>
+
+<style>
+  .toc-wrapper {
+    max-width: 420px;
+    margin: 0 auto 20px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  #searchInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #b7d4b2;
+    margin-bottom: 10px;
+    background-color: #fefcf5;
+  }
+
+  #tocList {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    border: 1px solid #dbcfb6;
+    border-radius: 10px;
+    background: #fffdf7;
+  }
+
+  #tocList li {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e3d9c9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  #tocList li:last-child {
+    border-bottom: none;
+  }
+
+  #tocList li:hover,
+  #tocList li.active {
+    background-color: #f4ecdc;
+    font-weight: bold;
+  }
+
+  .card-slider {
+    max-width: 600px;
+    margin: 30px auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #fdfaf4, #e7f0e3);
+    color: #3a4a2c;
+    position: relative;
+  }
+
+  .card-content {
+    padding: 30px;
+    text-align: left;
+  }
+
+  .card-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2f3e1f;
+  }
+
+  .card-text {
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .symptoms {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #2b5c2b;
+  }
+
+  .symptoms ul {
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+
+  .slider-controls {
+    display: flex;
+    justify-content: space-between;
+    background: #5c7b3f;
+  }
+
+  .slider-controls button {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 28px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .slider-controls button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .dot-container {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #c1dfc1;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #5c7b3f;
+  }
+</style>
+
+<div class="card-slider" role="region" aria-label="Mental Health Slides">
+  <div class="card-content" id="mhContent" tabindex="0"></div>
+  <div class="slider-controls">
+    <button id="prevSlide" aria-label="Previous slide">👈</button>
+    <button id="nextSlide" aria-label="Next slide">👉</button>
+  </div>
+  <div class="dot-container" id="dots"></div>
+</div>
+
+<script>
+const conditions = [
+{ title: "Major Depressive Disorder (Depression)", definition: "A mood disorder causing persistent feelings of sadness, hopelessness, and loss of interest or pleasure in daily life, often affecting physical and emotional well-being", symptoms: "Persistent low mood, Loss of interest or pleasure (anhedonia), Fatigue or low energy, Sleep disturbances (insomnia or oversleeping), Appetite or weight changes, Feelings of worthlessness or guilt, Difficulty concentrating or making decisions, Slowed movements or speech, Social withdrawal, Suicidal thoughts or behaviors" },
+ { title: "Generalized Anxiety Disorder (GAD)", definition: "A chronic condition characterized by excessive, uncontrollable worry about everyday things, often accompanied by physical symptoms like tension and fatigue.", symptoms: "Excessive worry, Restlessness or feeling on edge, Fatigue, Difficulty concentrating, Irritability, Muscle tension, Sleep disturbances, Sweating, Racing thoughts, Nausea or stomach aches" }, 
+{ title: " Bipolar Disorder (Type I & II)", definition: "A mood disorder marked by extreme emotional highs (mania or hypomania) and lows (depression), causing significant disruptions in energy, behavior, and thinking.", symptoms: "Depressive episode, Low energy, Hopelessness, Sleep and appetite changes, Inactivity, Suicidal thoughts, Manic/hypomanic episode-, Elevated or irritable mood, Inflated self-esteem, Decreased need for sleep, Racing thoughts or speech, Risky behavior (e.g., spending, sex, decisions)" }, 
+{ title: " Borderline Personality Disorder (BPD)", definition:"A personality disorder characterized by unstable relationships, intense emotions, fear of abandonment, identity issues, and impulsive behavior, often leading to self-harm or emotional crises.", symptoms: "Intense fear of abandonment, Unstable relationships, Rapid mood swings, Identity disturbance,Impulsive behaviors (spending, sex, substance use),Chronic feelings of emptiness, Intense anger or difficulty controlling anger,Self-harm or suicidal behaviors,Paranoia or dissociation under stress, Emotional instability within hours/days" }, 
+{ title: "Anorexia Nervosa", definition: "An eating disorder marked by an intense fear of gaining weight, distorted body image, and extreme restriction of food intake, often leading to dangerously low body weight.", symptoms: "Intense fear of weight gain,Extreme food restriction,Distorted body image,Excessive exercise,Low body weight,Fatigue or fainting,Cold sensitivity,Hair thinning or loss, Amenorrhea (loss of menstruation),Denial of seriousness" }, 
+{ title: "Bulimia Nervosa", definition: "An eating disorder involving cycles of binge eating followed by purging (vomiting, fasting, excessive exercise, or laxative use) to prevent weight gain.", symptoms: "Binge eating episodes,Compensatory behaviors (vomiting, laxatives),Feeling out of control while eating,Swollen cheeks,Tooth enamel erosion,Dehydration,Mood swings,Low self-esteem, Guilt after eating,Normal or fluctuating weight" },  
+{ title: "Binge Eating Disorder", definition: "A condition where a person frequently eats large amounts of food in a short period, often in secret, and feels a lack of control followed by guilt or shame, without purging.", symptoms: "Eating large quantities quickly,Eating when not hungry,Eating in secret,Feeling guilt or shame after,Lack of control over eating,Distress around food,Weight fluctuations,Emotional eating,Isolation due to eating habits, Low self-worth" },
+{ title: "Autism Spectrum Disorder (ASD)", definition: "A developmental disorder affecting communication, behavior, and social interaction. People with ASD may have restricted interests and repetitive behaviors, with varying levels of support needs.", symptoms: "Difficulty with social communication,Limited eye contact,Repetitive behaviors (e.g., hand flapping),Strong need for routine,Sensory sensitivities,Delayed speech or language,Intense interests in specific topics,Literal thinking,Difficulty with transitions,Trouble with peer relationships" },
+{ title: " Attention-Deficit/Hyperactivity Disorder (ADHD)", definition: "A neurodevelopmental disorder marked by persistent patterns of inattention, hyperactivity, and impulsivity that interfere with functioning or development.", symptoms: "Difficulty focusing,Forgetfulness,Impulsivity,Fidgeting or restlessness,Easily distracted,Poor time management,Trouble following through,Interrupting or blurting out,Disorganization,Emotional dysregulation" }, 
+{ title: "Schizophrenia", definition: "A severe mental disorder that affects how a person thinks, feels, and behaves. It includes hallucinations, delusions, disorganized thinking, and reduced emotional expression or motivation.", symptoms: "Hallucinations (usually auditory,Delusions (false beliefs),Disorganized speech,Social withdrawal,Flat affect (reduced emotional expression),Poor hygiene or grooming,Paranoia,Catatonia (immobility or rigidity), Memory or attention issues, Anosognosia (lack of insight)" },  
+
+{ title: "Epilepsy (neurological, not mental illness)", definition: "A neurological disorder where brain activity becomes abnormal, leading to seizures (sudden, uncontrollable electrical disturbances in the brain). Not a mental illness, but it can co-occur with one.", symptoms: "Seizures (convulsions, absence, etc.),Confusion after seizures,Staring spells,Loss of consciousness,Repetitive movements (automatisms),Fatigue post-seizure,Aura sensations (before seizures),Muscle rigidity or jerking,Mood changes before/after,Sleep disruption"},
+
+
+
+
+
+
+
+];
+
+const tocList = document.getElementById('tocList');
+const searchInput = document.getElementById('searchInput');
+const mhContent = document.getElementById('mhContent');
+const prevSlide = document.getElementById('prevSlide');
+const nextSlide = document.getElementById('nextSlide');
+const dots = document.getElementById('dots');
+let current = 0;
+
+function buildTOC() {
+  tocList.innerHTML = '';
+  conditions.sort((a, b) => a.title.localeCompare(b.title));
+  conditions.forEach((c, i) => {
+    const li = document.createElement('li');
+    li.textContent = c.title;
+    li.dataset.index = i;
+    li.onclick = () => {
+      current = i;
+      renderSlide(current);
+    };
+    tocList.appendChild(li);
+  });
+}
+
+function updateDots(index) {
+  dots.innerHTML = '';
+  tocList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+  conditions.forEach((_, i) => {
+    const dot = document.createElement('span');
+    dot.className = 'dot' + (i === index ? ' active' : '');
+    dot.setAttribute('role', 'button');
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.onclick = () => {
+      current = i;
+      renderSlide(current);
+    };
+    dots.appendChild(dot);
+    if (i === index) {
+      const activeLI = tocList.querySelector(`li[data-index='${i}']`);
+      if (activeLI) activeLI.classList.add('active');
+    }
+  });
+}
+
+function renderSlide(i) {
+  const c = conditions[i];
+  const bulletSymptoms = c.symptoms.split(',').map(s => `<li>${s.trim()}</li>`).join('');
+  mhContent.innerHTML = `
+    <div class="card-title">${c.title}</div>
+    <div class="card-text"><strong>Definition:</strong> ${c.definition}</div>
+    <div class="symptoms">
+      <strong>Symptoms:</strong>
+      <ul>${bulletSymptoms}</ul>
+    </div>
+  `;
+  updateDots(i);
+}
+
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase();
+  tocList.innerHTML = '';
+  conditions.forEach((c, i) => {
+    if (c.title.toLowerCase().includes(query) || c.symptoms.toLowerCase().includes(query)) {
+      const li = document.createElement('li');
+      li.textContent = c.title;
+      li.dataset.index = i;
+      li.onclick = () => {
+        current = i;
+        renderSlide(current);
+      };
+      tocList.appendChild(li);
+    }
+  });
+});
+
+prevSlide.onclick = () => {
+  current = (current - 1 + conditions.length) % conditions.length;
+  renderSlide(current);
+};
+
+nextSlide.onclick = () => {
+  current = (current + 1) % conditions.length;
+  renderSlide(current);
+};
+
+renderSlide(current);
+buildTOC();
+</script>

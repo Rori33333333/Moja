@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Water Tracker</title>
+  <link rel="stylesheet" href="WT.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="Firebase.js"></script>
+
+
+</head>
+<body>
+  <div class="container">
+    <h1> Water Tracker</h1>
+
+    <p>Daily goal: <span id="goalDisplay">8</span> glasses</p>
+
+    <button id="addGlass">Add 1 Glass</button>
+    <button id="resetWater">Reset</button>
+
+    <div id="waterProgressContainer">
+      <div id="waterProgress"></div>
+    </div>
+
+    <p>Glasses drunk today: <span id="waterCount">0</span></p>
+
+    <a href="physical-wellbeing.html" class="back-link">← Back to Physical Wellbeing</a>
+  </div>
+
+  <script src="WT.js"></script>
+</body>
+</html>
