@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Body Skills – MojaMind</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #f9f5f1;
+      color: #4a3f35;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    h3 {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      color: #3c2f25;
+    }
+
+    .search-bar {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem auto 2rem;
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: #333;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .card:hover {
+      background: #f0ece7;
+      transform: translateY(-2px);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Your Body: Mental Health Skills</h2>
+  <input type="text" id="searchInput" class="search-bar" placeholder="Search skills..." onkeyup="filterCards()">
+
+  <!-- Category 1 -->
+  <h3>Mind-Body Awareness</h3>
+  <div class="card-grid">
+    <a href="" class="card">Understanding the mind-body connection</a>
+    <a href="" class="card">Tuning into physical sensations</a>
+    <a href="" class="card">Listening to physical needs (rest, water, nutrition)</a>
+    <a href="" class="card">Noticing where emotions live in the body</a>
+    <a href="" class="card">Learning interoception (inner body awareness)</a>
+  </div>
+
+  <!-- Category 2 -->
+  <h3>Body-Based Coping Skills</h3>
+  <div class="card-grid">
+    <a href="" class="card">Body scan meditation</a>
+    <a href="" class="card">Progressive muscle relaxation</a>
+    <a href="" class="card">Stretching for emotional release</a>
+    <a href="" class="card">Yoga or movement-based therapy</a>
+    <a href="" class="card">Grounding through breath and posture</a>
+    <a href="" class="card">Dancing or shaking to release stress</a>
+  </div>
+
+  <!-- Category 3 -->
+  <h3>Nervous System Regulation</h3>
+  <div class="card-grid">
+    <a href="" class="card">Balancing the nervous system</a>
+    <a href="" class="card">Cold exposure and the vagus nerve</a>
+    <a href="" class="card">Tracking tension and relaxation</a>
+    <a href="" class="card">Somatic experiencing techniques</a>
+  </div>
+
+  <!-- Category 4 -->
+  <h3>Body Positivity & Self-Care</h3>
+  <div class="card-grid">
+    <a href="" class="card">Creating a body-positive self-image</a>
+    <a href="" class="card">Safe touch and comfort objects</a>
+    <a href="" class="card">Hydration and nutrient tracking</a>
+    <a href="" class="card">Using sleep and rest to regulate mood</a>
+    <a href="" class="card">Understanding hormonal influences on mood</a>
+  </div>
+
+  <script>
+    function filterCards() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.classList.toggle("hidden", !text.includes(filter));
+      });
+    }
+  </script>
+
+</body>
+</html>
