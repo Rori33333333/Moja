@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MojaMind Skills Slides</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f5f4ef;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .category {
+      margin-top: 2rem;
+    }
+    .card {
+      display: block;
+      background: #fff;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 0.5rem 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease;
+      text-decoration: none;
+      color: #333;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      margin-top: 0;
+    }
+    .tag {
+      display: inline-block;
+      background: #cce3dc;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin-top: 0.5rem;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧰 MojaMind Mental Health Skills</h1>
+  <input type="text" id="search" placeholder="Search for a skill or tag..." />
+
+  <div class="category" data-category="Grounding Techniques">
+    <h2>🪨 Grounding Techniques</h2>
+    <a href="#" class="card" data-tags="grounding sensory mindfulness">
+      <h3>5-4-3-2-1 Technique</h3>
+      <p>Notice 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste. It helps anchor you to the present.</p>
+      <span class="tag">Sensory</span>
+    </a>
+    <a href="#" class="card" data-tags="grounding observation">
+      <h3>Describe Your Environment</h3>
+      <p>Verbally describe your surroundings in detail to reconnect with the current moment and reduce dissociation.</p>
+      <span class="tag">Grounding</span>
+    </a>
+    <a href="#" class="card" data-tags="grounding touch object">
+      <h3>Carry a Grounding Object</h3>
+      <p>Keep a textured item (stone, fabric) in your pocket to touch when anxious. It offers physical focus.</p>
+      <span class="tag">Touch-Based</span>
+    </a>
+    <a href="#" class="card" data-tags="body mindfulness">
+      <h3>Body Scan</h3>
+      <p>Mentally check each part of your body from head to toe. Relax areas holding tension.</p>
+      <span class="tag">Mind-Body</span>
+    </a>
+    <a href="#" class="card" data-tags="grounding breath">
+      <h3>Focus on Breath</h3>
+      <p>Count your breaths or repeat "in" and "out" in your head to stay grounded.</p>
+      <span class="tag">Breathwork</span>
+    </a>
+    <a href="#" class="card" data-tags="emergency sensation">
+      <h3>Hold an Ice Cube</h3>
+      <p>The cold shock redirects attention and reduces panic symptoms by stimulating the vagus nerve.</p>
+      <span class="tag">Emergency</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness movement">
+      <h3>Grounding Walk</h3>
+      <p>Walk barefoot on grass or feel the texture of the ground as you step mindfully.</p>
+      <span class="tag">Movement</span>
+    </a>
+    <a href="#" class="card" data-tags="visual attention">
+      <h3>Name 3 Colors Around You</h3>
+      <p>Helps divert anxious thoughts by focusing on surroundings through color spotting.</p>
+      <span class="tag">Visual</span>
+    </a>
+    <a href="#" class="card" data-tags="imagery calm">
+      <h3>Safe Place Visualization</h3>
+      <p>Close your eyes and imagine a peaceful place in great detail. Helps calm racing thoughts.</p>
+      <span class="tag">Imagery</span>
+    </a>
+    <a href="#" class="card" data-tags="affirmation regulation">
+      <h3>Use Anchoring Phrases</h3>
+      <p>Repeat to yourself: “I am safe. I am here. This feeling will pass.” It can stabilize spiraling thoughts.</p>
+      <span class="tag">Affirmation</span>
+    </a>
+  </div>
+
+  <div class="category" data-category="Mind and Body Connection">
+    <h2>🧠🫀 Mind and Body Connection</h2>
+    <a href="#" class="card" data-tags="body scan awareness">
+      <h3>Full Body Awareness</h3>
+      <p>Pause and gently bring your attention to your feet, legs, torso, arms, and head. Check in with each area for sensations.</p>
+      <span class="tag">Body Awareness</span>
+    </a>
+    <a href="#" class="card" data-tags="yoga breath movement">
+      <h3>Mindful Movement</h3>
+      <p>Move through gentle yoga or stretching while focusing on your breath. This synchronizes mind and body rhythm.</p>
+      <span class="tag">Movement</span>
+    </a>
+    <a href="#" class="card" data-tags="progressive relaxation stress">
+      <h3>Progressive Muscle Relaxation</h3>
+      <p>Tense and release muscle groups one by one to relieve built-up tension and promote relaxation.</p>
+      <span class="tag">Tension Release</span>
+    </a>
+    <a href="#" class="card" data-tags="nervous system regulation">
+      <h3>Vagus Nerve Stimulation</h3>
+      <p>Stimulate your vagus nerve using slow deep breathing, cold exposure, or humming to calm your nervous system.</p>
+      <span class="tag">Nervous System</span>
+    </a>
+    <a href="#" class="card" data-tags="nutrition hydration">
+      <h3>Hydrate and Nourish</h3>
+      <p>Support brain function by staying hydrated and eating balanced meals with essential nutrients.</p>
+      <span class="tag">Physical Health</span>
+    </a>
+    <a href="#" class="card" data-tags="gut brain axis">
+      <h3>Gut Check-In</h3>
+      <p>Notice how your stomach feels. The gut-brain axis is vital for mood regulation and emotional well-being.</p>
+      <span class="tag">Gut Health</span>
+    </a>
+    <a href="#" class="card" data-tags="energy scan">
+      <h3>Energy Level Scan</h3>
+      <p>Mentally rate your energy from 1 to 10. Adjust your day with compassion if you're running low.</p>
+      <span class="tag">Self-Awareness</span>
+    </a>
+    <a href="#" class="card" data-tags="temperature comfort regulation">
+      <h3>Temperature Check</h3>
+      <p>Notice if you're too hot or cold. Adjust your environment to maintain physical comfort and emotional ease.</p>
+      <span class="tag">Regulation</span>
+    </a>
+    <a href="#" class="card" data-tags="rest fatigue body">
+      <h3>Rest and Body Permission</h3>
+      <p>Give yourself permission to rest. Rest is not laziness; it is essential for mind-body recovery.</p>
+      <span class="tag">Recovery</span>
+    </a>
+    <a href="#" class="card" data-tags="body signals illness awareness">
+      <h3>Listen to Body Signals</h3>
+      <p>Notice signs like headaches, clenched jaws, or fatigue. They may indicate emotional overload.</p>
+      <span class="tag">Body Signals</span>
+    </a>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById('search');
+    searchInput.addEventListener('input', function () {
+      const searchTerm = this.value.toLowerCase();
+      document.querySelectorAll('.card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        const tags = card.getAttribute('data-tags').toLowerCase();
+        if (text.includes(searchTerm) || tags.includes(searchTerm)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
