@@ -2,185 +2,1092 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MojaMind Skills Slides</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: Arial, sans-serif;
+      background: #f5f5f0;
       margin: 0;
-      padding: 1rem;
-      background: #f5f4ef;
+      padding: 20px;
       color: #333;
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 1rem;
+    h1, h2 {
+      color: #3b3a30;
+    }
+    .search-bar {
+      margin-bottom: 20px;
     }
     input[type="text"] {
+      padding: 10px;
       width: 100%;
-      padding: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
     .category {
-      margin-top: 2rem;
+      margin-bottom: 40px;
     }
     .card {
       display: block;
-      background: #fff;
-      border-radius: 12px;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.2s ease;
+      background-color: white;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin: 10px 0;
       text-decoration: none;
       color: #333;
+      border-radius: 8px;
+      transition: 0.3s;
     }
     .card:hover {
-      transform: translateY(-2px);
-    }
-    .card h3 {
-      margin-top: 0;
+      background-color: #eef0e1;
     }
     .tag {
       display: inline-block;
-      background: #cce3dc;
-      padding: 0.2rem 0.5rem;
-      border-radius: 6px;
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-    }
-    .hidden {
-      display: none;
+      background: #dcdcdc;
+      color: #333;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-top: 5px;
     }
   </style>
 </head>
 <body>
-  <h1>🧰 MojaMind Mental Health Skills</h1>
-  <input type="text" id="search" placeholder="Search for a skill or tag..." />
+  <h1>🪴 MojaMind Mental Health Skills</h1>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search skills by keyword or tag..." />
+  </div>
 
-  <div class="category" data-category="Grounding Techniques">
-    <h2>🪨 Grounding Techniques</h2>
-    <a href="#" class="card" data-tags="grounding sensory mindfulness">
-      <h3>5-4-3-2-1 Technique</h3>
-      <p>Notice 5 things you see, 4 you can touch, 3 you hear, 2 you smell, 1 you taste. It helps anchor you to the present.</p>
-      <span class="tag">Sensory</span>
+  <!-- Stress Regulation -->
+  <div class="category" id="stress-regulation">
+    <h2>🧘 Stress Regulation</h2>
+    <a href="#" class="card" data-tags="stress regulation muscle relaxation tension physical">
+      <h3>Progressive Muscle Relaxation</h3>
+      <p>Tense and release different muscle groups to reduce physical tension and improve stress awareness.</p>
+      <span class="tag">Physical</span>
     </a>
-    <a href="#" class="card" data-tags="grounding observation">
-      <h3>Describe Your Environment</h3>
-      <p>Verbally describe your surroundings in detail to reconnect with the current moment and reduce dissociation.</p>
-      <span class="tag">Grounding</span>
+    <a href="#" class="card" data-tags="stress breathing relaxation calm nervous system">
+      <h3>Deep Breathing</h3>
+      <p>Use slow, deep breaths to calm the nervous system and lower stress.</p>
+      <span class="tag">Breathing</span>
     </a>
-    <a href="#" class="card" data-tags="grounding touch object">
-      <h3>Carry a Grounding Object</h3>
-      <p>Keep a textured item (stone, fabric) in your pocket to touch when anxious. It offers physical focus.</p>
-      <span class="tag">Touch-Based</span>
-    </a>
-    <a href="#" class="card" data-tags="body mindfulness">
-      <h3>Body Scan</h3>
-      <p>Mentally check each part of your body from head to toe. Relax areas holding tension.</p>
-      <span class="tag">Mind-Body</span>
-    </a>
-    <a href="#" class="card" data-tags="grounding breath">
-      <h3>Focus on Breath</h3>
-      <p>Count your breaths or repeat "in" and "out" in your head to stay grounded.</p>
-      <span class="tag">Breathwork</span>
-    </a>
-    <a href="#" class="card" data-tags="emergency sensation">
-      <h3>Hold an Ice Cube</h3>
-      <p>The cold shock redirects attention and reduces panic symptoms by stimulating the vagus nerve.</p>
-      <span class="tag">Emergency</span>
-    </a>
-    <a href="#" class="card" data-tags="mindfulness movement">
-      <h3>Grounding Walk</h3>
-      <p>Walk barefoot on grass or feel the texture of the ground as you step mindfully.</p>
-      <span class="tag">Movement</span>
-    </a>
-    <a href="#" class="card" data-tags="visual attention">
-      <h3>Name 3 Colors Around You</h3>
-      <p>Helps divert anxious thoughts by focusing on surroundings through color spotting.</p>
-      <span class="tag">Visual</span>
-    </a>
-    <a href="#" class="card" data-tags="imagery calm">
-      <h3>Safe Place Visualization</h3>
-      <p>Close your eyes and imagine a peaceful place in great detail. Helps calm racing thoughts.</p>
+    <a href="#" class="card" data-tags="stress visualization relaxation imagery calm">
+      <h3>Visualization</h3>
+      <p>Imagine peaceful scenes or safe places to reduce stress and anxiety.</p>
       <span class="tag">Imagery</span>
     </a>
-    <a href="#" class="card" data-tags="affirmation regulation">
-      <h3>Use Anchoring Phrases</h3>
-      <p>Repeat to yourself: “I am safe. I am here. This feeling will pass.” It can stabilize spiraling thoughts.</p>
-      <span class="tag">Affirmation</span>
+    <a href="#" class="card" data-tags="stress grounding present awareness">
+      <h3>Grounding Techniques</h3>
+      <p>Focus on physical sensations or objects around you to stay present and reduce overwhelm.</p>
+      <span class="tag">Grounding</span>
+    </a>
+    <a href="#" class="card" data-tags="stress relaxation self-suggestion">
+      <h3>Autogenic Training</h3>
+      <p>Use self-suggestions to promote relaxation and reduce stress.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="stress breathing calm focus">
+      <h3>Box Breathing</h3>
+      <p>Inhale, hold, exhale, and hold for equal counts to calm the mind.</p>
+      <span class="tag">Breathing</span>
+    </a>
+    <a href="#" class="card" data-tags="stress mindfulness body scan relaxation">
+      <h3>Mindful Body Scan</h3>
+      <p>Slowly notice sensations in your body to release tension and promote calm.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="stress yoga movement relaxation">
+      <h3>Yoga Stretching</h3>
+      <p>Gentle yoga stretches to relax muscles and reduce stress.</p>
+      <span class="tag">Movement</span>
+    </a>
+    <a href="#" class="card" data-tags="stress aromatherapy scent calm">
+      <h3>Aromatherapy</h3>
+      <p>Use calming scents like lavender to reduce stress.</p>
+      <span class="tag">Scent</span>
+    </a>
+    <a href="#" class="card" data-tags="stress journaling reflection writing">
+      <h3>Journaling</h3>
+      <p>Write about your stressors and feelings to process and release tension.</p>
+      <span class="tag">Reflection</span>
+    </a>
+    <a href="#" class="card" data-tags="stress music relaxation calm">
+      <h3>Music Therapy</h3>
+      <p>Listen to calming music to soothe the mind and body.</p>
+      <span class="tag">Music</span>
+    </a>
+    <a href="#" class="card" data-tags="stress exercise mood tension">
+      <h3>Physical Exercise</h3>
+      <p>Engage in aerobic exercise to release tension and improve mood.</p>
+      <span class="tag">Exercise</span>
+    </a>
+    <a href="#" class="card" data-tags="stress meditation guided calm">
+      <h3>Guided Meditation</h3>
+      <p>Follow a guided meditation to focus and calm your mind.</p>
+      <span class="tag">Meditation</span>
+    </a>
+    <a href="#" class="card" data-tags="stress relaxation imagery">
+      <h3>Progressive Relaxation with Imagery</h3>
+      <p>Combine muscle relaxation with calming imagery to reduce stress deeply.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="stress nature outdoors wellbeing">
+      <h3>Nature Exposure</h3>
+      <p>Spend time outdoors to reduce stress and improve wellbeing.</p>
+      <span class="tag">Nature</span>
+    </a>
+    <a href="#" class="card" data-tags="stress biofeedback technology control">
+      <h3>Biofeedback</h3>
+      <p>Use technology to monitor physiological signs and learn stress control.</p>
+      <span class="tag">Technology</span>
+    </a>
+    <a href="#" class="card" data-tags="stress tai chi movement relaxation">
+      <h3>Tai Chi</h3>
+      <p>Practice slow, flowing movements to promote relaxation and balance.</p>
+      <span class="tag">Movement</span>
+    </a>
+    <a href="#" class="card" data-tags="stress self-compassion kindness">
+      <h3>Self-Compassion</h3>
+      <p>Practice kindness toward yourself to reduce stress impact.</p>
+      <span class="tag">Compassion</span>
+    </a>
+    <a href="#" class="card" data-tags="stress diet caffeine sugar">
+      <h3>Limit Stimulants</h3>
+      <p>Reduce caffeine and sugar intake to lower stress levels.</p>
+      <span class="tag">Diet</span>
+    </a>
+    <a href="#" class="card" data-tags="stress time management overwhelm">
+      <h3>Time Management</h3>
+      <p>Organize tasks to reduce overwhelm and stress.</p>
+      <span class="tag">Organization</span>
+    </a>
+    <a href="#" class="card" data-tags="stress social support connection">
+      <h3>Social Support</h3>
+      <p>Connect with friends or family to share stress and gain support.</p>
+      <span class="tag">Support</span>
+    </a>
+    <a href="#" class="card" data-tags="stress muscle relaxation variation">
+      <h3>Progressive Muscle Relaxation Variations</h3>
+      <p>Try different muscle groups and sequences to deepen relaxation.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="stress breathing mindful pause">
+      <h3>Mindful Breathing Pause</h3>
+      <p>Take short mindful breathing breaks during stressful moments.</p>
+      <span class="tag">Breathing</span>
+    </a>
+    <a href="#" class="card" data-tags="stress laughter therapy mood">
+      <h3>Laughing Therapy</h3>
+      <p>Use laughter to reduce stress hormones and boost mood.</p>
+      <span class="tag">Mood</span>
+    </a>
+    <a href="#" class="card" data-tags="stress media exposure limit">
+      <h3>Limit Media Exposure</h3>
+      <p>Reduce news and social media consumption to decrease stress.</p>
+      <span class="tag">Media</span>
+    </a>
+    <a href="#" class="card" data-tags="stress relaxation bath warm">
+      <h3>Warm Baths</h3>
+      <p>Use warm baths to relax muscles and calm the nervous system.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="stress creative expression art music">
+      <h3>Creative Expression</h3>
+      <p>Engage in art, music, or writing to express and reduce stress.</p>
+      <span class="tag">Creativity</span>
+    </a>
+    <a href="#" class="card" data-tags="stress sleep hygiene patterns">
+      <h3>Sleep Hygiene</h3>
+      <p>Maintain regular sleep patterns to improve stress resilience.</p>
+      <span class="tag">Sleep</span>
+    </a>
+    <a href="#" class="card" data-tags="stress grounding technique senses">
+      <h3>Grounding with 5-4-3-2-1 Technique</h3>
+      <p>Identify 5 things you see, 4 you feel, 3 you hear, 2 you smell, and 1 you taste to ground yourself.</p>
+      <span class="tag">Grounding</span>
+    </a>
+    <a href="#" class="card" data-tags="stress affirmations positivity confidence">
+      <h3>Positive Affirmations</h3>
+      <p>Repeat positive statements to reduce stress and build confidence.</p>
+      <span class="tag">Positivity</span>
     </a>
   </div>
 
-  <div class="category" data-category="Mind and Body Connection">
-    <h2>🧠🫀 Mind and Body Connection</h2>
-    <a href="#" class="card" data-tags="body scan awareness">
-      <h3>Full Body Awareness</h3>
-      <p>Pause and gently bring your attention to your feet, legs, torso, arms, and head. Check in with each area for sensations.</p>
+  <!-- DBT Skills -->
+  <div class="category" id="dbt-skills">
+    <h2>🧠 DBT Skills</h2>
+    <a href="#" class="card" data-tags="dbt mindfulness wise mind">
+      <h3>Wise Mind</h3>
+      <p>Balancing logic and emotion to act from your deeper inner knowing rather than extremes.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt distress tolerance tip skill">
+      <h3>TIP Skill</h3>
+      <p>Temperature, Intense exercise, Paced breathing to quickly shift your physiology during high stress.</p>
+      <span class="tag">Distress Tolerance</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt acceptance emotional pain tolerance">
+      <h3>Radical Acceptance</h3>
+      <p>Accepting reality fully without fighting it to reduce suffering and emotional pain.</p>
+      <span class="tag">Acceptance</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt interpersonal assertiveness communication">
+      <h3>DEAR MAN</h3>
+      <p>Assertive communication skill to effectively ask for what you need while maintaining respect.</p>
+      <span class="tag">Communication</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt emotion regulation opposite action">
+      <h3>Opposite Action</h3>
+      <p>Doing the opposite of your emotional urge to change unwanted feelings or behaviors.</p>
+      <span class="tag">Emotion Regulation</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt mindfulness present moment awareness">
+      <h3>Mindfulness to Current Moment</h3>
+      <p>Focus awareness fully on the present moment without judgment.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt distress tolerance self-soothe senses">
+      <h3>Self-Soothe</h3>
+      <p>Use the five senses to calm and comfort yourself during distress.</p>
+      <span class="tag">Self-Soothing</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt decision making pros cons">
+      <h3>Pros and Cons</h3>
+      <p>Weighing benefits and drawbacks to make informed decisions and reduce impulsivity.</p>
+      <span class="tag">Decision Making</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt cognitive restructuring facts">
+      <h3>Check the Facts</h3>
+      <p>Look for evidence to challenge distorted thoughts or beliefs.</p>
+      <span class="tag">Cognitive Restructuring</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt positive reinforcement mood">
+      <h3>Accumulate Positives</h3>
+      <p>Build positive experiences to improve mood and resilience.</p>
+      <span class="tag">Positivity</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt distress tolerance improve moment">
+      <h3>Improve the Moment</h3>
+      <p>Use short-term strategies to reduce distress and improve feelings immediately.</p>
+      <span class="tag">Distress Tolerance</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt planning coping ahead">
+      <h3>Cope Ahead</h3>
+      <p>Plan for difficult situations to reduce stress and improve coping.</p>
+      <span class="tag">Planning</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt mindfulness observation description">
+      <h3>Observe and Describe</h3>
+      <p>Mindfully notice and describe your feelings, thoughts, and environment objectively.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt mindfulness nonjudgmental stance">
+      <h3>Nonjudgmental Stance</h3>
+      <p>Practice seeing things without labeling them good or bad to reduce reactivity.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt distress tolerance distraction">
+      <h3>Distraction Techniques</h3>
+      <p>Use activities or thoughts to divert attention from distressing emotions temporarily.</p>
+      <span class="tag">Distress Tolerance</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt emotion regulation expression">
+      <h3>Half-smile and Willing Hands</h3>
+      <p>Use facial expressions and hand postures to reduce negative emotional arousal.</p>
+      <span class="tag">Emotion Regulation</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt emotion regulation health">
+      <h3>PLEASE Skill</h3>
+      <p>Maintain physical health to improve emotional regulation: treat Physical illness, balance Eating, avoid mood-Altering substances, balance Sleep, get Exercise.</p>
+      <span class="tag">Health</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt mastery confidence skill building">
+      <h3>Build Mastery</h3>
+      <p>Engage in skill-building activities to increase confidence and reduce helplessness.</p>
+      <span class="tag">Mastery</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt self-respect boundaries">
+      <h3>Radical Self-Respect</h3>
+      <p>Accept yourself and set boundaries to promote self-worth.</p>
+      <span class="tag">Self-Respect</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt emotion regulation tracking">
+      <h3>Emotion Regulation Checklist</h3>
+      <p>Track and manage your emotions actively for better regulation.</p>
+      <span class="tag">Emotion Regulation</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt goal setting motivation">
+      <h3>Check Your Goals</h3>
+      <p>Align actions with personal values and goals to stay motivated.</p>
+      <span class="tag">Goals</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt emotion regulation opposite action vulnerability">
+      <h3>Opposite to Vulnerability Emotions</h3>
+      <p>Use opposite action for emotions that make you feel vulnerable, like shame or fear.</p>
+      <span class="tag">Emotion Regulation</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt exposure emotion tolerance">
+      <h3>Emotional Exposure</h3>
+      <p>Gradually face and tolerate emotions that are difficult or feared.</p>
+      <span class="tag">Exposure</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt validation self acceptance">
+      <h3>Self-validation</h3>
+      <p>Acknowledge your feelings as understandable and legitimate.</p>
+      <span class="tag">Validation</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt mindfulness movement walking">
+      <h3>Mindful Walking</h3>
+      <p>Walk with awareness of body sensations and breath to cultivate mindfulness.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt interpersonal communication assertiveness">
+      <h3>Disagreeing Effectively</h3>
+      <p>Assertively express disagreement while maintaining respect and calm.</p>
+      <span class="tag">Communication</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt interpersonal relationships support">
+      <h3>Building Positive Relationships</h3>
+      <p>Develop and maintain supportive, healthy relationships.</p>
+      <span class="tag">Relationships</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt emotion regulation planning">
+      <h3>Emotion Regulation Plan</h3>
+      <p>Create a plan to manage emotions in challenging situations.</p>
+      <span class="tag">Planning</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt acceptance interpersonal">
+      <h3>Radical Acceptance of Others</h3>
+      <p>Accept others as they are to reduce conflict and frustration.</p>
+      <span class="tag">Acceptance</span>
+    </a>
+    <a href="#" class="card" data-tags="dbt behavior analysis problem solving">
+      <h3>Behavioral Chain Analysis</h3>
+      <p>Analyze the sequence of events, thoughts, and feelings that lead to problem behaviors.</p>
+      <span class="tag">Behavior Analysis</span>
+    </a>
+  </div>
+
+  <!-- CBT Skills -->
+  <div class="category" id="cbt-skills">
+    <h2>🧠 CBT Skills</h2>
+    <a href="#" class="card" data-tags="cbt thought distortion">
+      <h3>Identify Cognitive Distortions</h3>
+      <p>Learn to spot negative thinking patterns like catastrophizing, black-and-white thinking, and mind reading.</p>
+      <span class="tag">Thought Awareness</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt reframing">
+      <h3>Cognitive Reframing</h3>
+      <p>Challenge and reframe unhelpful thoughts into more balanced, realistic ones.</p>
+      <span class="tag">Cognitive Restructuring</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt evidence">
+      <h3>Evidence for and Against</h3>
+      <p>Test your thoughts by listing facts that support or contradict them to build objectivity.</p>
+      <span class="tag">Rational Thinking</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt journaling">
+      <h3>Thought Journaling</h3>
+      <p>Write out your thoughts, emotions, and behaviors to increase self-awareness and problem-solving.</p>
+      <span class="tag">Reflective Practice</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt core beliefs">
+      <h3>Challenging Core Beliefs</h3>
+      <p>Uncover deeply held beliefs about yourself and the world, and explore how to shift them.</p>
+      <span class="tag">Belief Change</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt activity">
+      <h3>Behavioral Activation</h3>
+      <p>Schedule meaningful activities to combat low mood and increase motivation.</p>
+      <span class="tag">Motivation</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt success journal">
+      <h3>Success Tracking</h3>
+      <p>Track daily wins and progress to reinforce self-efficacy and motivation.</p>
+      <span class="tag">Progress</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt reality check">
+      <h3>Reality Testing</h3>
+      <p>Evaluate whether your thoughts reflect the actual situation or are distorted by emotion.</p>
+      <span class="tag">Reality Check</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt ladder">
+      <h3>Thought Ladder</h3>
+      <p>Move from unhelpful beliefs to more empowering ones, one small step at a time.</p>
+      <span class="tag">Belief Scaling</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt exposure">
+      <h3>Graded Exposure</h3>
+      <p>Gradually face feared situations or thoughts to reduce avoidance and anxiety over time.</p>
+      <span class="tag">Anxiety Treatment</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt mindfulness">
+      <h3>Mindfulness Integration</h3>
+      <p>Incorporate mindfulness practices to observe thoughts non-judgmentally.</p>
+      <span class="tag">Mindfulness</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt problem solving">
+      <h3>Problem Solving</h3>
+      <p>Use structured approaches to find effective solutions to challenges.</p>
+      <span class="tag">Problem Solving</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt experiments">
+      <h3>Behavioral Experiments</h3>
+      <p>Test beliefs through real-world experiments to gather evidence.</p>
+      <span class="tag">Experiments</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt relaxation">
+      <h3>Relaxation Training</h3>
+      <p>Use relaxation techniques to reduce physical and mental tension.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt questioning">
+      <h3>Socratic Questioning</h3>
+      <p>Challenge automatic thoughts through guided questioning.</p>
+      <span class="tag">Questioning</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt scheduling">
+      <h3>Activity Scheduling</h3>
+      <p>Plan enjoyable or important activities to increase engagement and mood.</p>
+      <span class="tag">Scheduling</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt monitoring">
+      <h3>Self-Monitoring</h3>
+      <p>Track thoughts, feelings, and behaviors to increase insight.</p>
+      <span class="tag">Monitoring</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt exposure hierarchy">
+      <h3>Exposure Hierarchy</h3>
+      <p>Create stepwise plans to confront feared situations gradually.</p>
+      <span class="tag">Exposure</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt self talk">
+      <h3>Positive Self-Talk</h3>
+      <p>Replace negative internal dialogue with supportive statements.</p>
+      <span class="tag">Self-Talk</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt gratitude">
+      <h3>Gratitude Practice</h3>
+      <p>Regularly reflect on things you are thankful for to shift focus from negativity.</p>
+      <span class="tag">Gratitude</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt goal setting motivation">
+      <h3>SMART Goals</h3>
+      <p>Set Specific, Measurable, Achievable, Relevant, and Time-bound goals.</p>
+      <span class="tag">Goals</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt assertiveness communication">
+      <h3>Assertiveness Training</h3>
+      <p>Learn to communicate your needs and boundaries confidently and respectfully.</p>
+      <span class="tag">Assertiveness</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt relaxation breathing">
+      <h3>Breathing Exercises</h3>
+      <p>Practice focused breathing techniques to reduce anxiety and stress.</p>
+      <span class="tag">Breathing</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt journaling">
+      <h3>Emotion Journaling</h3>
+      <p>Track emotions and triggers to understand and manage them better.</p>
+      <span class="tag">Journaling</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt cognitive restructuring">
+      <h3>Cognitive Restructuring</h3>
+      <p>Change distorted thinking patterns to more balanced thoughts.</p>
+      <span class="tag">Cognitive</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt self-compassion">
+      <h3>Self-Compassion</h3>
+      <p>Practice kindness toward yourself during difficult times.</p>
+      <span class="tag">Compassion</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt exposure response prevention">
+      <h3>Exposure and Response Prevention</h3>
+      <p>Face feared situations while preventing habitual avoidance responses.</p>
+      <span class="tag">Exposure</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt behavioral activation">
+      <h3>Behavioral Activation</h3>
+      <p>Engage in meaningful activities to counteract depression.</p>
+      <span class="tag">Activation</span>
+    </a>
+    <a href="#" class="card" data-tags="cbt relaxation visualization">
+      <h3>Relaxation Visualization</h3>
+      <p>Use calming mental images to reduce tension.</p>
+      <span class="tag">Visualization</span>
+    </a>
+  </div>
+
+  <!-- Mindfulness -->
+  <div class="category" id="mindfulness">
+    <h2>📓 Mindfulness</h2>
+    <a href="#" class="card" data-tags="mindfulness breathing focus present moment">
+      <h3>Mindful Breathing</h3>
+      <p>Focus your attention on your breath to anchor yourself in the present.</p>
+      <span class="tag">Breathing</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness body scan awareness relaxation">
+      <h3>Body Scan</h3>
+      <p>Slowly observe sensations throughout your body with non-judgmental awareness.</p>
       <span class="tag">Body Awareness</span>
     </a>
-    <a href="#" class="card" data-tags="yoga breath movement">
-      <h3>Mindful Movement</h3>
-      <p>Move through gentle yoga or stretching while focusing on your breath. This synchronizes mind and body rhythm.</p>
+    <a href="#" class="card" data-tags="mindfulness walking movement awareness">
+      <h3>Mindful Walking</h3>
+      <p>Walk slowly and pay attention to the sensations of each step.</p>
       <span class="tag">Movement</span>
     </a>
-    <a href="#" class="card" data-tags="progressive relaxation stress">
-      <h3>Progressive Muscle Relaxation</h3>
-      <p>Tense and release muscle groups one by one to relieve built-up tension and promote relaxation.</p>
-      <span class="tag">Tension Release</span>
+    <a href="#" class="card" data-tags="mindfulness nonjudgment acceptance awareness">
+      <h3>Nonjudgmental Awareness</h3>
+      <p>Observe your thoughts and feelings without labeling them good or bad.</p>
+      <span class="tag">Acceptance</span>
     </a>
-    <a href="#" class="card" data-tags="nervous system regulation">
-      <h3>Vagus Nerve Stimulation</h3>
-      <p>Stimulate your vagus nerve using slow deep breathing, cold exposure, or humming to calm your nervous system.</p>
-      <span class="tag">Nervous System</span>
+    <a href="#" class="card" data-tags="mindfulness loving kindness compassion">
+      <h3>Loving-Kindness Meditation</h3>
+      <p>Practice sending goodwill and compassion toward yourself and others.</p>
+      <span class="tag">Compassion</span>
     </a>
-    <a href="#" class="card" data-tags="nutrition hydration">
-      <h3>Hydrate and Nourish</h3>
-      <p>Support brain function by staying hydrated and eating balanced meals with essential nutrients.</p>
-      <span class="tag">Physical Health</span>
+    <a href="#" class="card" data-tags="mindfulness present moment awareness focus">
+      <h3>Present Moment Awareness</h3>
+      <p>Bring your full attention to whatever you are doing right now.</p>
+      <span class="tag">Awareness</span>
     </a>
-    <a href="#" class="card" data-tags="gut brain axis">
-      <h3>Gut Check-In</h3>
-      <p>Notice how your stomach feels. The gut-brain axis is vital for mood regulation and emotional well-being.</p>
-      <span class="tag">Gut Health</span>
+    <a href="#" class="card" data-tags="mindfulness mindful eating awareness gratitude">
+      <h3>Mindful Eating</h3>
+      <p>Pay close attention to the taste, texture, and experience of eating.</p>
+      <span class="tag">Eating</span>
     </a>
-    <a href="#" class="card" data-tags="energy scan">
-      <h3>Energy Level Scan</h3>
-      <p>Mentally rate your energy from 1 to 10. Adjust your day with compassion if you're running low.</p>
-      <span class="tag">Self-Awareness</span>
+    <a href="#" class="card" data-tags="mindfulness thought observation nonattachment">
+      <h3>Observing Thoughts</h3>
+      <p>Notice thoughts as they come and go without getting caught up in them.</p>
+      <span class="tag">Thoughts</span>
     </a>
-    <a href="#" class="card" data-tags="temperature comfort regulation">
-      <h3>Temperature Check</h3>
-      <p>Notice if you're too hot or cold. Adjust your environment to maintain physical comfort and emotional ease.</p>
-      <span class="tag">Regulation</span>
+    <a href="#" class="card" data-tags="mindfulness mindful listening focus presence">
+      <h3>Mindful Listening</h3>
+      <p>Listen attentively without planning your response or judgment.</p>
+      <span class="tag">Listening</span>
     </a>
-    <a href="#" class="card" data-tags="rest fatigue body">
-      <h3>Rest and Body Permission</h3>
-      <p>Give yourself permission to rest. Rest is not laziness; it is essential for mind-body recovery.</p>
-      <span class="tag">Recovery</span>
+    <a href="#" class="card" data-tags="mindfulness breath counting concentration">
+      <h3>Breath Counting</h3>
+      <p>Count your breaths to improve focus and calm the mind.</p>
+      <span class="tag">Concentration</span>
     </a>
-    <a href="#" class="card" data-tags="body signals illness awareness">
-      <h3>Listen to Body Signals</h3>
-      <p>Notice signs like headaches, clenched jaws, or fatigue. They may indicate emotional overload.</p>
-      <span class="tag">Body Signals</span>
+    <a href="#" class="card" data-tags="mindfulness sensory awareness grounding">
+      <h3>Sensory Awareness</h3>
+      <p>Focus on sensory inputs like sounds, smells, and textures to ground yourself.</p>
+      <span class="tag">Grounding</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness acceptance openness compassion">
+      <h3>Radical Acceptance</h3>
+      <p>Fully accept your experience without resistance to reduce suffering.</p>
+      <span class="tag">Acceptance</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful pause breathe">
+      <h3>Mindful Pause</h3>
+      <p>Take brief moments during your day to pause and reset your attention.</p>
+      <span class="tag">Pause</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness gratitude awareness positive">
+      <h3>Gratitude Practice</h3>
+      <p>Focus on things you appreciate to foster positivity and presence.</p>
+      <span class="tag">Gratitude</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful journaling reflection">
+      <h3>Mindful Journaling</h3>
+      <p>Write reflectively with full awareness of your thoughts and feelings.</p>
+      <span class="tag">Journaling</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful movement stretching">
+      <h3>Mindful Movement</h3>
+      <p>Practice gentle stretching or yoga with focused awareness.</p>
+      <span class="tag">Movement</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness open awareness spaciousness">
+      <h3>Open Monitoring</h3>
+      <p>Maintain a broad awareness of your experience without focusing on any one thing.</p>
+      <span class="tag">Open Awareness</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness self compassion kindness">
+      <h3>Self-Compassion</h3>
+      <p>Offer yourself kindness and understanding, especially during difficulties.</p>
+      <span class="tag">Compassion</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful breathing relaxation">
+      <h3>Three-Minute Breathing Space</h3>
+      <p>A short practice to bring awareness to the present and calm the mind.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful observation nonreactive">
+      <h3>Nonreactive Observation</h3>
+      <p>Notice experiences without reacting impulsively or emotionally.</p>
+      <span class="tag">Observation</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness breath focus calm">
+      <h3>Focused Attention</h3>
+      <p>Direct attention to a single object, such as the breath, to build concentration.</p>
+      <span class="tag">Concentration</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful awareness daily life">
+      <h3>Mindfulness in Daily Life</h3>
+      <p>Bring mindful awareness to routine activities to increase presence and enjoyment.</p>
+      <span class="tag">Daily Life</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness loving kindness meditation compassion">
+      <h3>Metta Meditation</h3>
+      <p>Practice sending loving-kindness to yourself and others.</p>
+      <span class="tag">Compassion</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful speech listening communication">
+      <h3>Mindful Communication</h3>
+      <p>Practice attentive and compassionate speaking and listening.</p>
+      <span class="tag">Communication</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful eating gratitude">
+      <h3>Mindful Eating</h3>
+      <p>Eat with full awareness of flavors, textures, and sensations.</p>
+      <span class="tag">Eating</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness grounding techniques">
+      <h3>Grounding Through the Senses</h3>
+      <p>Focus on sensory details to anchor yourself in the present moment.</p>
+      <span class="tag">Grounding</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness breath awareness relaxation">
+      <h3>Breath Awareness</h3>
+      <p>Observe your breath to cultivate calm and focus.</p>
+      <span class="tag">Relaxation</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness acceptance openness">
+      <h3>Acceptance of Experience</h3>
+      <p>Allow thoughts and feelings to be as they are without resistance.</p>
+      <span class="tag">Acceptance</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness mindful movement gentle exercise">
+      <h3>Gentle Mindful Movement</h3>
+      <p>Engage in slow, deliberate movements with full attention.</p>
+      <span class="tag">Movement</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness self compassion kindness awareness">
+      <h3>Compassionate Awareness</h3>
+      <p>Combine mindfulness with kindness toward yourself.</p>
+      <span class="tag">Compassion</span>
+    </a>
+    <a href="#" class="card" data-tags="mindfulness daily practice consistency">
+      <h3>Consistent Mindfulness Practice</h3>
+      <p>Establish a regular mindfulness routine for lasting benefits.</p>
+      <span class="tag">Routine</span>
     </a>
   </div>
 
   <script>
-    const searchInput = document.getElementById('search');
-    searchInput.addEventListener('input', function () {
-      const searchTerm = this.value.toLowerCase();
-      document.querySelectorAll('.card').forEach(card => {
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.card');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase().trim();
+      cards.forEach(card => {
         const text = card.textContent.toLowerCase();
         const tags = card.getAttribute('data-tags').toLowerCase();
-        if (text.includes(searchTerm) || tags.includes(searchTerm)) {
-          card.classList.remove('hidden');
+        if (text.includes(query) || tags.includes(query)) {
+          card.style.display = 'block';
         } else {
-          card.classList.add('hidden');
+          card.style.display = 'none';
         }
       });
     });
+  <!-- Navigating Low Mood -->
+<div class="category" id="navigating-low-mood">
+  <h2>🛟 Navigating Low Mood</h2>
+  <a href="#" class="card" data-tags="low mood behavioral activation motivation">
+    <h3>Behavioral Activation</h3>
+    <p>Engage in enjoyable or meaningful activities to counteract low mood.</p>
+    <span class="tag">Motivation</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood self-care">
+    <h3>Self-Care Routine</h3>
+    <p>Develop daily habits that nurture your physical and emotional well-being.</p>
+    <span class="tag">Self-Care</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood social connection support">
+    <h3>Reach Out for Support</h3>
+    <p>Connect with friends, family, or professionals when feeling down.</p>
+    <span class="tag">Support</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood journaling reflection">
+    <h3>Mood Journaling</h3>
+    <p>Track your mood daily to identify patterns and triggers.</p>
+    <span class="tag">Reflection</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood positive focus gratitude">
+    <h3>Gratitude Practice</h3>
+    <p>Focus on things you appreciate to shift perspective from negativity.</p>
+    <span class="tag">Gratitude</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood exercise endorphins">
+    <h3>Physical Activity</h3>
+    <p>Use exercise to boost endorphins and improve mood.</p>
+    <span class="tag">Exercise</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood sleep hygiene">
+    <h3>Sleep Hygiene</h3>
+    <p>Establish routines that improve sleep quality to support mood.</p>
+    <span class="tag">Sleep</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood nutrition energy">
+    <h3>Balanced Nutrition</h3>
+    <p>Eat foods that support brain health and energy levels.</p>
+    <span class="tag">Nutrition</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood cognitive restructuring">
+    <h3>Challenge Negative Thoughts</h3>
+    <p>Identify and reframe pessimistic or self-critical thinking.</p>
+    <span class="tag">Cognitive</span>
+  </a>
+  <a href="#" class="card" data-tags="low mood relaxation stress relief">
+    <h3>Relaxation Techniques</h3>
+    <p>Use deep breathing, meditation, or progressive muscle relaxation.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Low Mood -->
+</div>
+
+<!-- Navigating Anxiety -->
+<div class="category" id="navigating-anxiety">
+  <h2>🎭 Navigating Anxiety</h2>
+  <a href="#" class="card" data-tags="anxiety grounding techniques present moment">
+    <h3>Grounding Techniques</h3>
+    <p>Use sensory focus to anchor yourself in the present moment.</p>
+    <span class="tag">Grounding</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety breathing techniques relaxation">
+    <h3>Deep Breathing</h3>
+    <p>Slow, controlled breathing to calm the nervous system.</p>
+    <span class="tag">Breathing</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety cognitive restructuring">
+    <h3>Reframe Anxious Thoughts</h3>
+    <p>Challenge irrational fears with evidence-based thinking.</p>
+    <span class="tag">Cognitive</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety exposure therapy gradual">
+    <h3>Gradual Exposure</h3>
+    <p>Face anxiety-provoking situations slowly to reduce fear.</p>
+    <span class="tag">Exposure</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety mindfulness acceptance">
+    <h3>Mindfulness of Anxiety</h3>
+    <p>Observe anxiety sensations without judgment or resistance.</p>
+    <span class="tag">Mindfulness</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety visualization calm safe place">
+    <h3>Safe Place Visualization</h3>
+    <p>Imagine a calm, safe environment to soothe anxiety.</p>
+    <span class="tag">Visualization</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety progressive muscle relaxation">
+    <h3>Muscle Relaxation</h3>
+    <p>Tense and release muscles to reduce physical tension.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety journaling triggers">
+    <h3>Anxiety Journaling</h3>
+    <p>Track triggers and symptoms to understand anxiety patterns.</p>
+    <span class="tag">Journaling</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety problem solving coping">
+    <h3>Problem-Solving Skills</h3>
+    <p>Develop strategies to manage anxiety-inducing problems.</p>
+    <span class="tag">Coping</span>
+  </a>
+  <a href="#" class="card" data-tags="anxiety self-compassion kindness">
+    <h3>Self-Compassion</h3>
+    <p>Be gentle with yourself during anxious moments.</p>
+    <span class="tag">Compassion</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Anxiety -->
+</div>
+
+<!-- Breathing Techniques -->
+<div class="category" id="breathing-techniques">
+  <h2>🧴 Breathing Techniques</h2>
+  <a href="#" class="card" data-tags="breathing diaphragmatic relaxation">
+    <h3>Diaphragmatic Breathing</h3>
+    <p>Breathe deeply using your diaphragm to maximize oxygen intake and relaxation.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing box breathing focus">
+    <h3>Box Breathing</h3>
+    <p>Breathe in, hold, breathe out, hold—each for a count of four to calm the mind.</p>
+    <span class="tag">Focus</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing 4-7-8 technique">
+    <h3>4-7-8 Breathing</h3>
+    <p>Inhale for 4 seconds, hold for 7, exhale for 8 to reduce anxiety and promote sleep.</p>
+    <span class="tag">Sleep</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing alternate nostril balance">
+    <h3>Alternate Nostril Breathing</h3>
+    <p>Balance energy and reduce stress by breathing alternately through each nostril.</p>
+    <span class="tag">Balance</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing paced breathing heart rate">
+    <h3>Paced Breathing</h3>
+    <p>Slow your breath to 5-6 breaths per minute to improve heart rate variability.</p>
+    <span class="tag">Heart Health</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing breath awareness focus">
+    <h3>Breath Awareness</h3>
+    <p>Focus attention on the breath as it moves in and out to calm the mind.</p>
+    <span class="tag">Mindfulness</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing humming breath relaxation">
+    <h3>Humming Breath</h3>
+    <p>Breathe out slowly while humming to stimulate the vagus nerve and relax.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing sigh breath release">
+    <h3>Sigh Breath</h3>
+    <p>Take a deep breath and release it with a sigh to relieve tension.</p>
+    <span class="tag">Release</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing breath counting concentration">
+    <h3>Breath Counting</h3>
+    <p>Count each breath cycle to improve concentration and reduce anxiety.</p>
+    <span class="tag">Concentration</span>
+  </a>
+  <a href="#" class="card" data-tags="breathing energizing breath">
+    <h3>Energizing Breath</h3>
+    <p>Use short, quick breaths to increase alertness and energy.</p>
+    <span class="tag">Energy</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Breathing -->
+</div>
+
+<!-- Emotional Regulation -->
+<div class="category" id="emotional-regulation">
+  <h2>🕯️ Emotional Regulation</h2>
+  <a href="#" class="card" data-tags="emotion regulation awareness">
+    <h3>Emotion Awareness</h3>
+    <p>Identify and name your emotions to better manage them.</p>
+    <span class="tag">Awareness</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation labeling">
+    <h3>Label Emotions</h3>
+    <p>Practice putting your feelings into words to reduce their intensity.</p>
+    <span class="tag">Labeling</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation breathing">
+    <h3>Calming Breath</h3>
+    <p>Use deep breathing to soothe intense emotions.</p>
+    <span class="tag">Breathing</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation opposite action">
+    <h3>Opposite Action</h3>
+    <p>Act opposite to the emotion-driven impulse to change emotional response.</p>
+    <span class="tag">Behavior</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation grounding">
+    <h3>Grounding</h3>
+    <p>Use sensory focus to reduce overwhelming feelings.</p>
+    <span class="tag">Grounding</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation self-soothing">
+    <h3>Self-Soothing</h3>
+    <p>Use comforting actions like a warm bath or soothing music.</p>
+    <span class="tag">Self-Care</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation cognitive reappraisal">
+    <h3>Cognitive Reappraisal</h3>
+    <p>Change your interpretation of events to alter emotional impact.</p>
+    <span class="tag">Cognition</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation distraction">
+    <h3>Distraction Techniques</h3>
+    <p>Shift attention away from distressing emotions temporarily.</p>
+    <span class="tag">Coping</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation journaling">
+    <h3>Emotion Journaling</h3>
+    <p>Write down your emotions and triggers to gain clarity.</p>
+    <span class="tag">Journaling</span>
+  </a>
+  <a href="#" class="card" data-tags="emotion regulation planning">
+    <h3>Emotion Regulation Plan</h3>
+    <p>Create strategies to manage intense emotions proactively.</p>
+    <span class="tag">Planning</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Emotional Regulation -->
+</div>
+
+<!-- Brain Rewiring -->
+<div class="category" id="brain-rewiring">
+  <h2>📓 Brain Rewiring</h2>
+  <a href="#" class="card" data-tags="brain rewiring neuroplasticity">
+    <h3>Neuroplasticity Basics</h3>
+    <p>Understand how the brain changes with experience and learning.</p>
+    <span class="tag">Neuroplasticity</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring habit change">
+    <h3>Breaking Negative Habits</h3>
+    <p>Use techniques to weaken unhealthy behavior patterns.</p>
+    <span class="tag">Habits</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring positive habits">
+    <h3>Building Positive Habits</h3>
+    <p>Create routines that support mental health and well-being.</p>
+    <span class="tag">Habits</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring visualization">
+    <h3>Visualization Techniques</h3>
+    <p>Use mental imagery to enhance brain function and mood.</p>
+    <span class="tag">Visualization</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring mindfulness">
+    <h3>Mindfulness and Brain Change</h3>
+    <p>Learn how mindfulness practice physically alters brain circuits.</p>
+    <span class="tag">Mindfulness</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring affirmations">
+    <h3>Positive Affirmations</h3>
+    <p>Use repeated positive statements to reshape thought patterns.</p>
+    <span class="tag">Affirmations</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring gratitude">
+    <h3>Gratitude Practice</h3>
+    <p>Regularly focus on gratitude to rewire emotional brain networks.</p>
+    <span class="tag">Gratitude</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring learning new skills">
+    <h3>Learn New Skills</h3>
+    <p>Challenge your brain by acquiring new knowledge or abilities.</p>
+    <span class="tag">Learning</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring journaling">
+    <h3>Reflective Journaling</h3>
+    <p>Write to reinforce new ways of thinking and emotional processing.</p>
+    <span class="tag">Journaling</span>
+  </a>
+  <a href="#" class="card" data-tags="brain rewiring meditation">
+    <h3>Meditation Practice</h3>
+    <p>Regular meditation supports brain plasticity and emotional balance.</p>
+    <span class="tag">Meditation</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Brain Rewiring -->
+</div>
+
+<!-- Navigating Panic Attacks -->
+<div class="category" id="navigating-panic-attacks">
+  <h2>🛟 Navigating Panic Attacks</h2>
+  <a href="#" class="card" data-tags="panic attacks grounding techniques">
+    <h3>Grounding Techniques</h3>
+    <p>Focus on the present moment to reduce panic intensity.</p>
+    <span class="tag">Grounding</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks breathing exercises">
+    <h3>Controlled Breathing</h3>
+    <p>Use slow, deep breaths to calm the body's panic response.</p>
+    <span class="tag">Breathing</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks muscle relaxation">
+    <h3>Progressive Muscle Relaxation</h3>
+    <p>Release muscle tension that builds during panic attacks.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks positive self-talk">
+    <h3>Positive Self-Talk</h3>
+    <p>Remind yourself that the panic will pass and you are safe.</p>
+    <span class="tag">Self-Talk</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks safe space visualization">
+    <h3>Safe Space Visualization</h3>
+    <p>Imagine a calm, safe place to soothe panic feelings.</p>
+    <span class="tag">Visualization</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks journaling triggers">
+    <h3>Panic Journaling</h3>
+    <p>Record symptoms and triggers to better understand panic attacks.</p>
+    <span class="tag">Journaling</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks emergency plan">
+    <h3>Emergency Plan</h3>
+    <p>Develop steps to follow when a panic attack begins.</p>
+    <span class="tag">Planning</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks support network">
+    <h3>Build Support Network</h3>
+    <p>Identify people who can help during panic attacks.</p>
+    <span class="tag">Support</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks relaxation techniques">
+    <h3>Relaxation Techniques</h3>
+    <p>Use techniques like deep breathing or meditation regularly.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <a href="#" class="card" data-tags="panic attacks medication knowledge">
+    <h3>Medication Awareness</h3>
+    <p>Understand prescribed medications and how they help panic attacks.</p>
+    <span class="tag">Medication</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Panic Attacks -->
+</div>
+
+<!-- Navigating Burnout -->
+<div class="category" id="navigating-burnout">
+  <h2>🎭 Navigating Burnout</h2>
+  <a href="#" class="card" data-tags="burnout self-care rest">
+    <h3>Prioritize Rest</h3>
+    <p>Ensure you get adequate sleep and downtime to recharge.</p>
+    <span class="tag">Rest</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout boundary setting">
+    <h3>Set Healthy Boundaries</h3>
+    <p>Learn to say no and protect your energy.</p>
+    <span class="tag">Boundaries</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout workload management">
+    <h3>Manage Workload</h3>
+    <p>Break tasks into manageable pieces and delegate when possible.</p>
+    <span class="tag">Workload</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout mindfulness stress management">
+    <h3>Mindfulness Practice</h3>
+    <p>Use mindfulness to stay present and reduce stress.</p>
+    <span class="tag">Mindfulness</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout physical activity">
+    <h3>Regular Exercise</h3>
+    <p>Move your body to improve energy and mood.</p>
+    <span class="tag">Exercise</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout social connection">
+    <h3>Maintain Social Connections</h3>
+    <p>Stay connected with friends and family for emotional support.</p>
+    <span class="tag">Social</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout hobbies fun">
+    <h3>Engage in Enjoyable Activities</h3>
+    <p>Make time for hobbies and activities that bring joy.</p>
+    <span class="tag">Hobbies</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout nutrition hydration">
+    <h3>Eat Well and Stay Hydrated</h3>
+    <p>Support your body with nutritious food and plenty of water.</p>
+    <span class="tag">Nutrition</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout professional help">
+    <h3>Seek Professional Support</h3>
+    <p>Consult with mental health professionals if burnout persists.</p>
+    <span class="tag">Support</span>
+  </a>
+  <a href="#" class="card" data-tags="burnout relaxation techniques">
+    <h3>Practice Relaxation</h3>
+    <p>Use relaxation exercises like meditation or deep breathing daily.</p>
+    <span class="tag">Relaxation</span>
+  </a>
+  <!-- Add 20 more skill cards similarly for Burnout -->
+</div>
+  
   </script>
 </body>
 </html>
+

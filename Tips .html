@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MojaMind Tips Feed</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+      background: #f0f5f2;
+    }
+
+    .container {
+      height: 100vh;
+      scroll-snap-type: y mandatory;
+      overflow-y: scroll;
+    }
+
+    .slide {
+      scroll-snap-align: start;
+      height: 100vh;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+
+    .tip-content {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.6rem;
+      padding: 1rem;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #a4d4ae;
+      color: #333;
+      padding: 0.4rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+
+
+    .slide-counter {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      font-size: 0.8rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Slide 1 -->
+  <div class="slide">
+    <div class="tag">Anxiety</div>
+<div class="tip-content">
+    <strong> 🌿Try 5-4-3-2-1 Grounding </strong>
+      Look around and name 5 things you can see,  
+      4 things you can touch,  
+      3 things you can hear,  
+      2 things you can smell,  
+      and 1 thing you can taste.
+    </div>
+    <div class="slide-counter">1 / 3</div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide">
+    <div class="tag">Self-Talk</div>
+ 
+    <div class="tip-content">
+      <strong> 💭You are not your thoughts.</strong>
+      Just because your brain says something doesn’t mean it’s true.
+    </div>
+    <div class="slide-counter">2 / 3</div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide">
+    <div class="tag">Sleep</div>
+  <div class="tip-content">
+  <strong>😴Trouble sleeping?</strong>
+      Try the 4-7-8 breathing method before bed.  
+      Inhale 4 seconds, hold 7, exhale 8.
+    </div>
+    <div class="slide-counter">3 / 3</div>
+  </div>
+</div>
+
+
+
+<div class="slide">
+    <div class="tag">Sleep</div>
+  <div class="tip-content">
+  <strong></strong>
+  
+    </div>
+    <div class="slide-counter">3 / 3</div>
+  </div>
+</div>
+
+
+<div class="slide">
+    <div class="tag">Sleep</div>
+  <div class="tip-content">
+  <strong></strong>
+  
+    </div>
+    <div class="slide-counter">3 / 3</div>
+  </div>
+</div>
+
+<div class="slide">
+    <div class="tag">Sleep</div>
+  <div class="tip-content">
+  <strong></strong>
+  
+    </div>
+    <div class="slide-counter">3 / 3</div>
+  </div>
+</div>
+
+<div class="slide">
+    <div class="tag">Sleep</div>
+  <div class="tip-content">
+  <strong></strong>
+  
+    </div>
+    <div class="slide-counter">3 / 3</div>
+  </div>
+</div>
+
+
+</body>
+</html>
