@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MojaMind Tree Phase: Sleep Habits Quiz</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fff9;
+      color: #2b3a2e;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #255e4d;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+      background: #ffffff;
+      border-left: 4px solid #6ea07b;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #4b604f;
+    }
+
+    .question {
+      margin-top: 1rem;
+    }
+
+    .question p {
+      font-weight: bold;
+    }
+
+    .options label {
+      display: block;
+      margin: 0.3rem 0;
+      cursor: pointer;
+    }
+
+    .explanation {
+      font-size: 0.9rem;
+      color: #3f5547;
+      margin-top: 0.3rem;
+    }
+
+    button {
+      background: #6ea07b;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      font-size: 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 1.5rem;
+    }
+
+    #result {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #255e4d;
+      background: #e7fff2;
+      padding: 1rem;
+      border-left: 4px solid #41a36f;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid #ccc;
+      font-size: 0.95rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌳 MojaMind Tree Phase Quiz: Sleep Habits</h1>
+    <p>Reflect on your nightly routine and learn how sleep shapes your mind and mood.</p>
+  </header>
+
+  <main id="quiz-form">
+    <!-- Sections 1–4 same as before -->
+    <!-- For brevity, only the first question is shown below -->
+    <!-- Repeat the same structure for questions 2–12 -->
+    <section class="section">
+      <h2>💤 Section 1: Routine & Environment</h2>
+      <div class="question">
+        <p>1. How consistent is your sleep schedule?</p>
+        <div class="options">
+          <label><input type="radio" name="q1" value="4" /> A. Same time every day (±15 min)</label>
+          <label><input type="radio" name="q1" value="3" /> B. Fairly consistent (±1 hour)</label>
+          <label><input type="radio" name="q1" value="2" /> C. Varies a lot</label>
+          <label><input type="radio" name="q1" value="1" /> D. All over the place</label>
+        </div>
+        <div class="explanation">🌱 Consistency strengthens your circadian rhythm.</div>
+      </div>
+
+      <!-- Continue all other questions similarly using name="q2", "q3", ..., value="4-1" -->
+      <!-- Example for checkboxes for Q11: -->
+      <div class="question">
+        <p>11. Do you have any of the following symptoms?</p>
+        <div class="options">
+          <label><input type="checkbox" class="q11" /> Snoring</label>
+          <label><input type="checkbox" class="q11" /> Restless legs</label>
+          <label><input type="checkbox" class="q11" /> Waking up gasping</label>
+          <label><input type="checkbox" class="q11" /> Acting out dreams</label>
+        </div>
+        <div class="explanation">🌱 These may signal sleep disorders like apnea or REM behavior disorder.</div>
+      </div>
+    </section>
+
+    <!-- Submit button and result box -->
+    <button onclick="calculateScore()">Submit Quiz</button>
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>📘 Learn more in our Tree Phase deep dives on sleep cycles, stress hormones, and behavior patterns.</p>
+  </footer>
+
+  <script>
+    function calculateScore() {
+      let score = 0;
+
+      // Loop over questions 1 to 12 except q11 (symptom checkboxes)
+      for (let i = 1; i <= 12; i++) {
+        if (i === 11) continue; // Skip Q11 radio
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (selected) {
+          score += parseInt(selected.value);
+        }
+      }
+
+      // Subtract points for symptoms in Q11
+      const q11Checks = document.querySelectorAll(".q11:checked");
+      score -= q11Checks.length;
+
+      // Bound score
+      if (score < 0) score = 0;
+
+      // Generate feedback
+      let message = "";
+      if (score >= 36) {
+        message = `🌙 <strong>Sleep Master</strong> – Your habits are solid and science-based!`;
+      } else if (score >= 25) {
+        message = `🧠 <strong>Sleep Aware</strong> – You're doing well, but small improvements could boost your rest.`;
+      } else if (score >= 12) {
+        message = `🌑 <strong>Sleep Rookie</strong> – Time to build healthier sleep habits!`;
+      } else {
+        message = `🚨 <strong>Sleep Emergency</strong> – Your sleep patterns may be harming your health. Prioritize rest now.`;
+      }
+
+      document.getElementById("result").innerHTML = `<p>Your score: ${score}/48</p><p>${message}</p>`;
+    }
+  </script>
+</body>
+</html>
