@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Use MojaMind</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f8f5;
+      color: #333;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    h1, h2, h3 {
+      color: #2d6a4f;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .icon {
+      font-size: 1.4rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>📘 How to Use MojaMind</h1>
+  <p>Welcome to <strong>MojaMind</strong> – your guided journey to better mental health, emotional literacy, and self-understanding. This guide walks you through the three core areas of the platform:</p>  <section>
+    <h2>🧠 1. Health Hub: Quizzes for Self-Awareness</h2>
+    <p>The <strong>Health Hub</strong> includes short, research-based quizzes that help you reflect on your mental and emotional wellbeing. These are not diagnostic tools, but are designed to promote understanding and clarity.</p><h3>🧪 Available Quizzes:</h3>
+<ul>
+  <li>Mood & Sleep Tracker Quizzes</li>
+  <li>CBT Thinking Patterns Checker</li>
+  <li>Emotional Regulation Self-Assessment</li>
+  <li>Anxiety & Burnout Screeners</li>
+</ul>
+
+<h3>✨ After Each Quiz, You’ll Receive:</h3>
+<ul>
+  <li>Plain-language feedback</li>
+  <li>Reflective insights and personalized tips</li>
+  <li>Suggested content or tools to explore</li>
+  <li>Optional exporting for journaling or therapy use</li>
+</ul>
+
+  </section>  <section>
+    <h2>🌱 2. Educational Content: Seed, Sprout, and Tree Phases</h2>
+    <p>MojaMind follows a <strong>garden growth model</strong> for learning. You start in the Seed phase and grow through Sprout and Tree phases. Learn at your own pace, and revisit anytime.</p><h3>🌱 Seed Phase (Beginner)</h3>
+<ul>
+  <li>What is mental health?</li>
+  <li>Types of therapy (CBT, DBT, EMDR, etc.)</li>
+  <li>Roles of professionals: psychologists, psychiatrists, therapists</li>
+  <li>Intro to conditions like anxiety, depression, trauma</li>
+  <li>Glossary and FAQs</li>
+</ul>
+
+<h3>🌿 Sprout Phase (Intermediate)</h3>
+<ul>
+  <li>The nervous system: fight, flight, freeze</li>
+  <li>Brain-gut-mind connection</li>
+  <li>Physical wellness and mental health</li>
+  <li>Somatic, breathing, and mindfulness practices</li>
+</ul>
+
+<h3>🌳 Tree Phase (Advanced)</h3>
+<ul>
+  <li>Deep dives into specific conditions using DSM-5 breakdowns</li>
+  <li>Alternative therapies (art therapy, nature therapy, etc.)</li>
+  <li>Self-assessment tools and reflection prompts</li>
+  <li>50+ science-based mental health facts</li>
+  <li>Profiles of mental health pioneers</li>
+</ul>
+
+  </section>  <section>
+    <h2>🧰 3. Tree Phase Tools</h2>
+    <p>The <strong>Tree Phase</strong> unlocks interactive and personalized tools for building habits, tracking mental health, and staying grounded.</p>
+    <ul>
+      <li>🧰 Coping Toolbox: Create a personalized list of coping strategies</li>
+      <li>📆 Daily Planner & Routine Maker</li>
+      <li>📈 Mood, Symptom & Habit Tracker</li>
+      <li>💧 Water & Menstrual Cycle Trackers</li>
+      <li>🪴 Goal Planner with Progress Badges</li>
+      <li>📥 Export, backup, and customize data securely</li>
+    </ul>
+  </section>  <section>
+    <h2>💡 Final Notes</h2>
+    <ul>
+      <li>All content is youth-friendly, science-backed, and culturally aware.</li>
+      <li>There’s no pressure to complete everything. Your pace is the right pace.</li>
+      <li>If overwhelmed, start with a quiz or one short Seed Phase article.</li>
+    </ul>
+    <p><strong>MojaMind is here to help you grow – one thought, one feeling, and one day at a time.</strong></p>
+  </section>
+</body>
+</html>
