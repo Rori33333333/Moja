@@ -4,19 +4,90 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Workout Tracker</title>
-  <link rel="stylesheet" href="WK.css" />
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ccffcc, #66ff66);
+      color: #003300;
+      margin: 0;
+      padding: 0;
+    }
 
-<!-- Your Firebase init file -->
-<script src="Firebase.js"></script>
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #ffffffcc;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #66ff66;
+    }
 
+    h1, h2 {
+      text-align: center;
+      color: #006600;
+    }
 
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #99ff99;
+      border-radius: 8px;
+      background-color: #f6fff6;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      background-color: #00cc44;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #009933;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      background: #e6ffe6;
+      margin: 10px 0;
+      padding: 10px;
+      border-left: 5px solid #00cc44;
+      border-radius: 5px;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 2rem;
+      color: #004d00;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>️ Workout Tracker</h1>
+    <h1>🏋️ Workout Tracker</h1>
 
     <form id="workoutForm">
       <label for="workoutType">Workout Type:</label>
@@ -48,13 +119,54 @@
       <button type="submit">Save Workout</button>
     </form>
 
-    <h2> Workout History</h2>
+    <h2>Workout History</h2>
     <ul id="workoutHistory"></ul>
 
     <a href="physical-wellbeing.html" class="back-link">← Back to Physical Wellbeing</a>
   </div>
 
-  <script src="workout-tracker.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("workoutForm");
+      const historyList = document.getElementById("workoutHistory");
+
+      // Load from localStorage on startup
+      const workouts = JSON.parse(localStorage.getItem("workouts") || "[]");
+      workouts.forEach(displayWorkout);
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const type = document.getElementById("workoutType").value;
+        const duration = document.getElementById("workoutDuration").value;
+        const energy = document.getElementById("energyAfter").value;
+        const notes = document.getElementById("workoutNotes").value;
+
+        const workout = {
+          type,
+          duration,
+          energy,
+          notes,
+          timestamp: new Date().toLocaleString()
+        };
+
+        workouts.push(workout);
+        localStorage.setItem("workouts", JSON.stringify(workouts));
+        displayWorkout(workout);
+        form.reset();
+      });
+
+      function displayWorkout(workout) {
+        const li = document.createElement("li");
+        li.innerHTML = `
+          <strong>${workout.type}</strong> for ${workout.duration} min<br />
+          Energy: ${workout.energy}/5<br />
+          Notes: ${workout.notes || "None"}<br />
+          <small>${workout.timestamp}</small>
+        `;
+        historyList.prepend(li);
+      }
+    });
+  </script>
 </body>
 </html>
-
