@@ -23,25 +23,25 @@
   <!-- Scroll Indicator -->
   <div id="scrollIndicator"></div>
 
-  /* Navigation */
-.navbar {
-  background-color: #EEE9BF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
+  
   <h1>MojaMind</h1>
   <h2>Mental Health Is For Everyone</h2>
 
   <button id="beginSeedBtn" class="btn1">Begin Here</button>
 
+<!-- Responsive Navigation Bar -->
+<nav class="navbar">
+  <div class="logo">MojaMind</div>
+  <button class="hamburger" id="hamburger">&#9776;</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="current-page">Home</a></li>
+    <li><a href="Glossary.html">Glossary</a></li>
+    <li><a href="Main.htm">Health Hub</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="pledge.html">Pledge</a></li>
+    <li><button id="viewBookmarksBtn" class="btn1">View Bookmarks</button></li>
+  </ul>
+</nav>
 
   <p id="welcomemessage">
     Welcome to the land of the thriving.<br />
