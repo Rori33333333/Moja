@@ -6,193 +6,43 @@
   <meta name="keywords" content="Mental health, Anxiety, Depression, Bipolar, DBT, CBT, Mental health coping skills, Schizophrenia, Borderline personality disorder" />
   <meta name="author" content="Gomolemo Nthite" />
   <title>MojaMind</title>
+  <link rel="stylesheet" href="home.css" />
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background: #f5fff5;
-      color: #222;
-    }
+<!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #00cc66;
-      padding: 10px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+<!-- Your Firebase init file -->
+<script src="firebase-init.js"></script>
 
-    .navbar .logo {
-      font-size: 1.2em;
-      font-weight: bold;
-      color: white;
-    }
 
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 10px;
-    }
-
-    .nav-links li a,
-    .nav-links li button {
-      color: white;
-      text-decoration: none;
-      padding: 6px 12px;
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-size: 0.9em;
-    }
-
-    .nav-links li a:hover,
-    .nav-links li button:hover {
-      background: #008f4f;
-      border-radius: 5px;
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 1.5em;
-      background: none;
-      border: none;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #00cc66;
-        width: 100%;
-        display: none;
-      }
-      .nav-links.show {
-        display: flex;
-      }
-      .hamburger {
-        display: block;
-      }
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #00a854;
-    }
-
-    #welcomemessage {
-      font-style: italic;
-      text-align: center;
-      margin: 30px;
-      line-height: 1.6;
-    }
-
-    p {
-      text-align: center;
-      margin: 20px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn1 {
-      background: #00cc66;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin: 10px;
-    }
-
-    .btn1:hover {
-      background: #00994d;
-    }
-
-    .phases {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px auto;
-      max-width: 900px;
-    }
-
-    .phase {
-      text-align: center;
-    }
-
-    .popup {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .popup.hidden {
-      display: none;
-    }
-
-    .popup-content {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
-      max-width: 300px;
-    }
-
-    .site-footer {
-      background: #eafaea;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
-
-    .footer-links a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #006633;
-    }
-
-    .footer-contact p, .footer-copy p {
-      margin: 5px 0;
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Navigation -->
+
+  <!-- Scroll Indicator -->
+  <div id="scrollIndicator"></div>
+
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="logo">MojaMind</div>
-    <button class="hamburger" id="hamburger">&#9776;</button>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links">
       <li><a href="index.html" class="current-page">Home</a></li>
-      <li><a href="Glossary.html">Glossary</a></li>
+    
+    <li><a href="Glossary.html">Glossary</a></li>
       <li><a href="Main.htm">Health Hub</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
       <li><a href="pledge.html">Pledge</a></li>
       <li><button id="viewBookmarksBtn" class="btn1">View Bookmarks</button></li>
     </ul>
   </nav>
 
-  <!-- Page Heading -->
   <h1>MojaMind</h1>
   <h2>Mental Health Is For Everyone</h2>
-  <div style="text-align: center;">
-    <button id="beginSeedBtn" class="btn1">Begin Here</button>
-  </div>
 
-  <!-- Welcome Message -->
+  <button id="beginSeedBtn" class="btn1">Begin Here</button>
+
+
   <p id="welcomemessage">
     Welcome to the land of the thriving.<br />
     Today you start your journey as a seedling,<br />
@@ -205,37 +55,41 @@
   <p>
     MojaMind is a mental health literacy and education website. In order to take care of your mental health,
     knowing what to do is key. If you do not know where to begin, do not worry, you are on the right path.
-    You are not alone. MojaMind is meant to guide you through your education and awareness journey — you are in good hands.
+    You are not alone. MojaMind is meant to guide you through your education and awareness journey â€” you are in good hands.
   </p>
 
-  <!-- Tree Phases -->
+  
   <section class="phases">
-    <div class="phase">
+    <div class="phase" id="seed">
       <img src="Seed.png" alt="Seed phase" width="200" height="170" />
-      <a href="Seed.html" class="btn1">Seed Phase [Begin here!]</a>
+      <a href="Seed.html" class="btn1">Seed phase [Begin here!]</a>
     </div>
-    <div class="phase">
+    <div class="phase" id="sprout">
       <img src="Sprout.png" alt="Sprout phase" width="200" height="170" />
-      <a href="Sprout phase .html" class="btn1">Sprout Phase</a>
+      <a href="Sprout phase .html" class="btn1">Sprout phase</a>
     </div>
-    <div class="phase">
+    <div class="phase" id="tree">
       <img src="TreeFull.png" alt="Tree phase" width="200" height="200" />
-      <a href="Tree.html" class="btn1">Tree Phase</a>
+      <a href="Tree.html" class="btn1">Tree phase</a>
     </div>
   </section>
 
-  <!-- Popup -->
+ 
+
+  <!-- Welcome Popup -->
   <div id="welcomePopup" class="popup hidden">
     <div class="popup-content">
       <h2>Welcome to MojaMind</h2>
       <p>Healing starts here. If you're ready, sign the pledge.</p>
       <a href="pledge.html" class="btn1">Sign the Pledge</a>
-      <button id="closePopup" class="btn1">Close</button>
+      <button id="closePopup" class="btn1" style="margin-top: 10px;">Close</button>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer class="site-footer">
+
+  <!-- Footer Section -->
+<footer class="site-footer">
+  <div class="footer-content">
     <div class="footer-links">
       <a href="about.html">About Us</a>
       <a href="Glossary.htm">Glossary</a>
@@ -244,33 +98,18 @@
       <a href="#seed">Phases</a>
     </div>
     <div class="footer-contact">
-      <p>📞 +27 123 456 789</p>
-      <p>📧 info@mojamind.org</p>
+      <p>ðŸ“ž Phone: +27 123 456 789</p>
+      <p>ðŸ“§ Email: info@mojamind.org</p>
     </div>
     <div class="footer-copy">
-      <p>© MojaMind 2025. All rights reserved.</p>
+      <p>Â© MojaMind 2025. All rights reserved.</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- JavaScript -->
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
 
-    const beginSeedBtn = document.getElementById('beginSeedBtn');
-    const welcomePopup = document.getElementById('welcomePopup');
-    const closePopup = document.getElementById('closePopup');
+  <script src="home.js"></script>
 
-    beginSeedBtn.addEventListener('click', () => {
-      welcomePopup.classList.remove('hidden');
-    });
-
-    closePopup.addEventListener('click', () => {
-      welcomePopup.classList.add('hidden');
-    });
-  </script>
+  
 </body>
 </html>
