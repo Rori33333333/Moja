@@ -54,18 +54,52 @@
       background: #7ca062;
     }
 
-    #foodHistory {
+    #foodList {
       list-style: none;
       padding-left: 0;
       margin-top: 25px;
     }
 
-    #foodHistory li {
+    #foodList li {
       background: white;
       margin-bottom: 12px;
       padding: 15px;
       border-left: 6px solid #a5d6a7;
       border-radius: 6px;
+      position: relative;
+    }
+
+    .mood-tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      font-weight: bold;
+      margin-top: 4px;
+    }
+
+    .Happy { background: #d0f0c0; color: #33691e; }
+    .Neutral { background: #e0e0e0; color: #616161; }
+    .Low { background: #ffe0e0; color: #b71c1c; }
+    .Anxious { background: #fce4ec; color: #880e4f; }
+    .Frustrated { background: #fff3e0; color: #e65100; }
+    .Overwhelmed { background: #ede7f6; color: #4527a0; }
+
+    .delete-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #f44336;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      font-size: 0.8em;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .delete-btn:hover {
+      background: #d32f2f;
     }
 
     .export-btn {
@@ -104,12 +138,12 @@
       <label for="mood">Mood After Eating:</label>
       <select id="mood" required>
         <option value="">Select...</option>
-        <option value="Happy">Happy</option>
-        <option value="Neutral">Neutral</option>
-        <option value="Low">Low</option>
-        <option value="Anxious">Anxious</option>
-        <option value="Frustrated">Frustrated</option>
-        <option value="Overwhelmed">Overwhelmed</option>
+        <option value="Happy">😊 Happy</option>
+        <option value="Neutral">😐 Neutral</option>
+        <option value="Low">😞 Low</option>
+        <option value="Anxious">😰 Anxious</option>
+        <option value="Frustrated">😤 Frustrated</option>
+        <option value="Overwhelmed">😵 Overwhelmed</option>
       </select>
 
       <label for="notes">Notes:</label>
@@ -130,14 +164,39 @@
 
     let foodDiary = JSON.parse(localStorage.getItem('foodDiary')) || [];
 
-    // Render entries
+    function getMoodEmoji(mood) {
+      const emojis = {
+        Happy: '😊',
+        Neutral: '😐',
+        Low: '😞',
+        Anxious: '😰',
+        Frustrated: '😤',
+        Overwhelmed: '😵'
+      };
+      return emojis[mood] || '';
+    }
+
     function renderFoodDiary() {
       foodList.innerHTML = '';
       foodDiary.forEach((entry, i) => {
         const li = document.createElement('li');
-        li.textContent = `${entry.date} - ${entry.meal} - Mood: ${entry.mood}`;
+        const moodEmoji = getMoodEmoji(entry.mood);
+        li.innerHTML = `
+          <strong>${entry.date}</strong> – <em>${entry.meal}</em><br/>
+          <strong>Mood:</strong> ${moodEmoji} <span class="mood-tag ${entry.mood}">${entry.mood}</span><br/>
+          <strong>Notes:</strong> ${entry.notes || "None"}
+          <button class="delete-btn" onclick="deleteEntry(${i})">Delete</button>
+        `;
         foodList.appendChild(li);
       });
+    }
+
+    function deleteEntry(index) {
+      if (confirm("Delete this entry?")) {
+        foodDiary.splice(index, 1);
+        localStorage.setItem('foodDiary', JSON.stringify(foodDiary));
+        renderFoodDiary();
+      }
     }
 
     foodForm.addEventListener('submit', e => {
@@ -161,10 +220,6 @@
       foodForm.reset();
     });
 
-    // Initial render
-    renderFoodDiary();
-
-    // Export function
     function exportFoodDiary() {
       if (!foodDiary.length) {
         alert("No food diary entries to export.");
@@ -175,7 +230,7 @@
         return `🍽️ Entry ${i + 1}
 Date: ${entry.date}
 Meal: ${entry.meal}
-Mood After Eating: ${entry.mood}
+Mood: ${entry.mood}
 Notes: ${entry.notes}
 `;
       }).join('\n------------------------\n');
@@ -186,6 +241,9 @@ Notes: ${entry.notes}
       a.download = 'MojaMind_FoodDiary_' + Date.now() + '.txt';
       a.click();
     }
+
+    // Initial render
+    renderFoodDiary();
   </script>
 </body>
 </html>
